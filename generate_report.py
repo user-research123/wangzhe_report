@@ -62,6 +62,15 @@ def generate_official_events_section(events_data):
         content = event.get('content', '')
         timeline_items.append(generate_timeline_item(date_str, f'<p style="margin: 0; color: #4a5568;">{content}</p>'))
     
+    # 添加数据来源说明
+    source_note = '''
+                  <div class="timeline-item">
+                        <div class="timeline-content" style="background: transparent; border: none; padding: 0;">
+                           <p style="margin: 0; color: #718096; font-size: 0.9em; font-style: italic;">数据来源于《王者荣耀：世界》游戏官方网站</p>
+                        </div>
+                   </div>'''
+    timeline_items.append(source_note)
+    
     return '\n'.join(timeline_items)
 
 
