@@ -127,17 +127,17 @@ def generate_html_report():
     official_events = load_json_data("official_events.json")
     competitor_data = load_json_data("competitor_data.json")
     user_feedback = load_json_data("user_feedback.json")
+    summary_data = load_json_data("summary.json")
     
     # 生成各部分内容
     official_events_html = generate_official_events_section(official_events)
     competitor_html = generate_competitor_section(competitor_data)
     user_feedback_html = generate_user_feedback_section(user_feedback)
     
-    # 生成总结（取最新日期的总结）
+    # 生成总结（从 summary.json 读取）
     summary = ""
-    if official_events:
-        latest_event = max(official_events, key=lambda x: x.get('date', ''))
-        summary = latest_event.get('summary', '')
+    if summary_data:
+        summary = summary_data.get('content', '')
     
     # HTML模板
     html_template = f'''<!DOCTYPE html>
