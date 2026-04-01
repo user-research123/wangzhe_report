@@ -322,7 +322,7 @@
             </div>
 
             <!-- 竞品动态追踪（带日期切换） -->
-            <div class="section">
+            <div class="section" id="competitor-section">
                 <h2 class="section-title">2、竞品动态追踪</h2>
                 
                 <!-- 日期切换按钮 -->
@@ -333,7 +333,7 @@
                 </div>
 
                 <!-- 4月1日内容 -->
-                <div id="date-04-01" class="date-content active">
+                <div id="competitor-date-04-01" class="date-content active">
                     <div class="timeline">
                         <div class="timeline-item">
                             <div class="timeline-date">4月1日</div>
@@ -431,7 +431,7 @@
                 </div>
 
                 <!-- 3月31日内容 -->
-                <div id="date-03-31" class="date-content">
+                <div id="competitor-date-03-31" class="date-content">
                     <div class="timeline">
                         <div class="timeline-item">
                             <div class="timeline-date">3月31日</div>
@@ -483,7 +483,7 @@
                 </div>
 
                 <!-- 3月30日内容 -->
-                <div id="date-03-30" class="date-content">
+                <div id="competitor-date-03-30" class="date-content">
                     <div class="timeline">
                         <div class="timeline-item">
                             <div class="timeline-date">3月30日</div>
@@ -614,19 +614,20 @@
         // 竞品动态追踪日期切换
         function showDate(dateId) {
             // 隐藏所有竞品动态内容
-            const contents = document.querySelectorAll('.section:nth-of-type(2) .date-content');
+            const section = document.getElementById('competitor-section');
+            const contents = section.querySelectorAll('.date-content');
             contents.forEach(content => {
                 content.classList.remove('active');
             });
 
             // 移除竞品动态所有按钮的激活状态
-            const tabs = document.querySelectorAll('.section:nth-of-type(2) .date-tab');
+            const tabs = section.querySelectorAll('.date-tab');
             tabs.forEach(tab => {
                 tab.classList.remove('active');
             });
 
             // 显示选中的竞品动态内容
-            const selectedContent = document.getElementById('date-' + dateId);
+            const selectedContent = document.getElementById('competitor-date-' + dateId);
             if (selectedContent) {
                 selectedContent.classList.add('active');
             }
