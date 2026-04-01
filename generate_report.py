@@ -54,7 +54,8 @@ def generate_timeline_item(date_str, content_html):
 def parse_chinese_date(date_str):
     """将中文日期字符串转换为可排序的元组 (year, month, day)"""
     import re
-    match = re.match(r'(\d{4})年(\d{2})月(\d{2})日', date_str)
+    # 支持多种格式：2026年04月01日 或 2026 年 3 月 31 日
+    match = re.match(r'(\d{4})\s*年\s*(\d{1,2})\s*月\s*(\d{1,2})\s*日', date_str)
     if match:
         year, month, day = match.groups()
         return (int(year), int(month), int(day))
