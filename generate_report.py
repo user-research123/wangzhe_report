@@ -51,13 +51,23 @@ def generate_timeline_item(date_str, content_html):
                    </div>'''
 
 
+def parse_chinese_date(date_str):
+    """将中文日期字符串转换为可排序的元组 (year, month, day)"""
+    import re
+    match = re.match(r'(\d{4})年(\d{2})月(\d{2})日', date_str)
+    if match:
+        year, month, day = match.groups()
+        return (int(year), int(month), int(day))
+    return (0, 0, 0)
+
+
 def generate_official_events_section(events_data):
     """生成游戏官方事件部分"""
     if not events_data:
         return ""
     
     timeline_items = []
-    for event in sorted(events_data, key=lambda x: x.get('date', ''), reverse=True):
+    for event in sorted(events_data, key=lambda x: parse_chinese_date(x.get('date', '')), reverse=True):
         date_str = event.get('date', '')
         content = event.get('content', '')
         timeline_items.append(generate_timeline_item(date_str, f'<p style="margin: 0; color: #4a5568;">{content}</p>'))
@@ -80,7 +90,7 @@ def generate_competitor_section(competitor_data):
         return ""
     
     timeline_items = []
-    for item in sorted(competitor_data, key=lambda x: x.get('date', ''), reverse=True):
+    for item in sorted(competitor_data, key=lambda x: parse_chinese_date(x.get('date', '')), reverse=True):
         date_str = item.get('date', '')
         competitors_html = item.get('competitors', [])
         
@@ -103,7 +113,7 @@ def generate_user_feedback_section(feedback_data):
         return ""
     
     timeline_items = []
-    for item in sorted(feedback_data, key=lambda x: x.get('date', ''), reverse=True):
+    for item in sorted(feedback_data, key=lambda x: parse_chinese_date(x.get('date', '')), reverse=True):
         date_str = item.get('date', '')
         channels_html = item.get('channels', [])
         
