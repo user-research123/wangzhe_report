@@ -413,17 +413,8 @@
                                 </div>
 
                                 <div class="competitor-card">
-<div class="competitor-name">竞品三：闲鱼</div>
-                                    <h3 class="subsubsection-title">核心发现</h3>
-                                    <ul>
-                                        <li><strong>低价小额交易主导：</strong>所有101个商品价格均在¥500以下，价格范围¥1.00-¥280.00，平均价格¥11.91，中位数价格¥5.00，无高价账号交易，体现与垂直交易平台的市场差异化。</li>
-                                        <li><strong>游戏资源/安装包占比最高：</strong>18个(17.8%)，包括王者荣耀世界iOS安装包、MOD、材质包、角色卡等虚拟资源。</li>
-                                        <li><strong>充值/代充服务活跃：</strong>16个(15.8%)，涵盖PJSK大小月卡、网易我的世界代充、暗区突围代充等多款游戏。</li>
-                                        <li><strong>虚拟道具/资源交易普遍：</strong>15个(14.9%)，包括WRC激活码、雨世界CDK、游戏内宠物、称号等。</li>
-                                        <li><strong>攻略/辅助工具需求明显：</strong>11个(10.9%)，如王者荣耀世界红buff挑战攻略、羊了个羊科技辅助等。</li>
-                                        <li><strong>代练/代打服务集中：</strong>9个(8.9%)，主要为王者荣耀世界红buff称号代打、狂暴模式通关等服务。</li>
-                                        <li><strong>长尾品类多样：</strong>包括PC单机游戏(7个)、账号/ID交易(6个)、捞人/组队服务(3个)、小说/文学(3个)、花园类物品(3个)等。</li>
-                                    </ul>
+                                    <div class="competitor-name">竞品三：闲鱼</div>
+                                    <p style="color: #718096; font-style: italic;">暂无新动态</p>
                                 </div>
                             </div>
                         </div>
@@ -546,42 +537,58 @@
                 </div>
             </div>
 
-            <!-- 用户需求追踪 -->
+            <!-- 用户需求追踪（带日期切换） -->
             <div class="section">
                 <h2 class="section-title">3、用户需求追踪</h2>
-                <div class="timeline">
-                    <div class="timeline-item">
-                        <div class="timeline-date">3月31日</div>
-                        <div class="timeline-content">
-                            <div class="competitor-card" style="margin-bottom: 20px;">
-                                <span class="channel-tag">渠道：小红书</span>
-                                <ul>
-                                    <li>昵称抢注攻略和教程成为热门内容</li>
-                                    <li>用户积极分享自己成功抢到的 ID</li>
-                                    <li>极品 ID(单字、二字、诗意名)稀缺性引发热烈讨论</li>
-                                    <li>3 月 30 日 10 点抢注活动参与反馈集中爆发</li>
-                                    <li>PC 端公测定档 4 月 10 日的信息广泛传播</li>
-                                </ul>
+                
+                <!-- 日期切换按钮 -->
+                <div class="date-tabs">
+                    <button class="date-tab active" onclick="showUserFeedbackDate('03-31')">3月31日</button>
+                    <button class="date-tab" onclick="showUserFeedbackDate('03-30')">3月30日</button>
+                </div>
+
+                <!-- 3月31日内容 -->
+                <div id="user-feedback-03-31" class="date-content active">
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-date">3月31日</div>
+                            <div class="timeline-content">
+                                <div class="competitor-card" style="margin-bottom: 20px;">
+                                    <span class="channel-tag">渠道：小红书</span>
+                                    <ul>
+                                        <li>昵称抢注攻略和教程成为热门内容</li>
+                                        <li>用户积极分享自己成功抢到的 ID</li>
+                                        <li>极品 ID(单字、二字、诗意名)稀缺性引发热烈讨论</li>
+                                        <li>3 月 30 日 10 点抢注活动参与反馈集中爆发</li>
+                                        <li>PC 端公测定档 4 月 10 日的信息广泛传播</li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="timeline-item">
-                        <div class="timeline-date">3月30日</div>
-                        <div class="timeline-content">
-                            <div class="competitor-card" style="margin-bottom: 20px;">
-                                <span class="channel-tag">渠道：小红书</span>
-                                <ul>
-                                    <li>ID 抢注成为热点话题</li>
-                                    <li>昵称唯一性机制引发用户间激烈竞争</li>
-                                    <li>用户普遍反馈注册困难，如"努力半天一个词组都没有"</li>
-                                    <li>单字 ID 极度稀缺</li>
-                                    <li>常见成功注册 ID 多为 2–4 字文学性、诗意类名称，例如："敬山水""月神""惊鸿舞"</li>
-                                </ul>
-                            </div>
+                </div>
 
-                            <div class="competitor-card">
-                                <span class="channel-tag">渠道：微博</span>
-                                <p>用户主要行为集中在：晒出已抢到的游戏 ID、讨论 ID 抢注难度、表达对稀有 ID 获取难的情绪反馈</p>
+                <!-- 3月30日内容 -->
+                <div id="user-feedback-03-30" class="date-content">
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-date">3月30日</div>
+                            <div class="timeline-content">
+                                <div class="competitor-card" style="margin-bottom: 20px;">
+                                    <span class="channel-tag">渠道：小红书</span>
+                                    <ul>
+                                        <li>ID 抢注成为热点话题</li>
+                                        <li>昵称唯一性机制引发用户间激烈竞争</li>
+                                        <li>用户普遍反馈注册困难，如"努力半天一个词组都没有"</li>
+                                        <li>单字 ID 极度稀缺</li>
+                                        <li>常见成功注册 ID 多为 2–4 字文学性、诗意类名称，例如："敬山水""月神""惊鸿舞"</li>
+                                    </ul>
+                                </div>
+
+                                <div class="competitor-card">
+                                    <span class="channel-tag">渠道：微博</span>
+                                    <p>用户主要行为集中在：晒出已抢到的游戏 ID、讨论 ID 抢注难度、表达对稀有 ID 获取难的情绪反馈</p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -595,21 +602,46 @@
     </div>
 
     <script>
+        // 竞品动态追踪日期切换
         function showDate(dateId) {
-            // 隐藏所有内容
-            const contents = document.querySelectorAll('.date-content');
+            // 隐藏所有竞品动态内容
+            const contents = document.querySelectorAll('.section:nth-of-type(2) .date-content');
             contents.forEach(content => {
                 content.classList.remove('active');
             });
 
-            // 移除所有按钮的激活状态
-            const tabs = document.querySelectorAll('.date-tab');
+            // 移除竞品动态所有按钮的激活状态
+            const tabs = document.querySelectorAll('.section:nth-of-type(2) .date-tab');
             tabs.forEach(tab => {
                 tab.classList.remove('active');
             });
 
-            // 显示选中的内容
+            // 显示选中的竞品动态内容
             const selectedContent = document.getElementById('date-' + dateId);
+            if (selectedContent) {
+                selectedContent.classList.add('active');
+            }
+
+            // 激活对应的按钮
+            event.target.classList.add('active');
+        }
+
+        // 用户需求追踪日期切换
+        function showUserFeedbackDate(dateId) {
+            // 隐藏所有用户需求内容
+            const contents = document.querySelectorAll('.section:nth-of-type(3) .date-content');
+            contents.forEach(content => {
+                content.classList.remove('active');
+            });
+
+            // 移除用户需求所有按钮的激活状态
+            const tabs = document.querySelectorAll('.section:nth-of-type(3) .date-tab');
+            tabs.forEach(tab => {
+                tab.classList.remove('active');
+            });
+
+            // 显示选中的用户需求内容
+            const selectedContent = document.getElementById('user-feedback-' + dateId);
             if (selectedContent) {
                 selectedContent.classList.add('active');
             }
