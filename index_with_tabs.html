@@ -538,7 +538,7 @@
             </div>
 
             <!-- 用户需求追踪（带日期切换） -->
-            <div class="section">
+            <div class="section" id="user-feedback-section">
                 <h2 class="section-title">3、用户需求追踪</h2>
                 
                 <!-- 日期切换按钮 -->
@@ -629,13 +629,13 @@
         // 用户需求追踪日期切换
         function showUserFeedbackDate(dateId) {
             // 隐藏所有用户需求内容
-            const contents = document.querySelectorAll('.section:nth-of-type(3) .date-content');
+            const contents = document.querySelectorAll('#user-feedback-section .date-content');
             contents.forEach(content => {
                 content.classList.remove('active');
             });
 
             // 移除用户需求所有按钮的激活状态
-            const tabs = document.querySelectorAll('.section:nth-of-type(3) .date-tab');
+            const tabs = document.querySelectorAll('#user-feedback-section .date-tab');
             tabs.forEach(tab => {
                 tab.classList.remove('active');
             });
