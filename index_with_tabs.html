@@ -290,6 +290,79 @@
                 font-size: 0.85em;
             }
         }
+
+        /* 榜单曲线图样式 */
+        .chart-section {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 25px;
+            margin-top: 20px;
+            border: 1px solid #e2e8f0;
+        }
+
+        .chart-title {
+            font-size: 1.3em;
+            color: #2d3748;
+            margin-bottom: 15px;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        .chart-subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 15px;
+            font-size: 13px;
+        }
+
+        #rank-chart-container {
+            width: 100%;
+            height: 350px;
+            position: relative;
+        }
+
+        #rank-chart-container svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        .chart-legend {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 15px;
+        }
+
+        .chart-legend-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+        }
+
+        .chart-legend-color {
+            width: 20px;
+            height: 3px;
+        }
+
+        .chart-data-source {
+            text-align: center;
+            color: #999;
+            font-size: 12px;
+            margin-top: 15px;
+        }
+
+        .chart-tooltip {
+            position: absolute;
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 8px 12px;
+            border-radius: 4px;
+            font-size: 12px;
+            pointer-events: none;
+            display: none;
+            z-index: 1000;
+        }
     </style>
 </head>
 <body>
@@ -305,6 +378,25 @@
                 <h2 class="section-title">总结</h2>
                 <div class="summary-box">
                     <p>4月1日，《王者荣耀世界》暂无新增官方活动。竞品方面：螃蟹账号持续提供涵盖单双字ID、角色ID的账号交易及代练服务，QQ平台为主流；盼之以双字/特殊含义/单字ID为核心商品，存在百万级高价招商账号；闲鱼市场以游戏资源/安装包、充值/代充及虚拟道具交易为主，呈现低价小额特征。用户侧，微博平台性能优化与组队社交需求突出，代练代肝及道具交易等省时省力类服务关注度高，反映玩家对技术体验、社交协作及效率提升的核心诉求。</p>
+                </div>
+
+                <!-- 榜单曲线图 -->
+                <div class="chart-section">
+                    <div class="chart-title">云·王者荣耀世界 - 游戏(免费)榜单排名趋势</div>
+                    <div class="chart-subtitle">数据统计周期：2026-03-27 至 2026-04-02</div>
+                    
+                    <div class="chart-legend">
+                        <div class="chart-legend-item">
+                            <div class="chart-legend-color" style="background-color: #91CC75;"></div>
+                            <span>游戏(免费)</span>
+                        </div>
+                    </div>
+                    
+                    <div id="rank-chart-container">
+                        <div class="chart-tooltip" id="chart-tooltip"></div>
+                    </div>
+                    
+                    <div class="chart-data-source">数据来源：七麦数据</div>
                 </div>
             </div>
 
@@ -706,6 +798,323 @@
             // 激活对应的按钮
             event.target.classList.add('active');
         }
+
+        // ========== 榜单曲线图绘制函数 ==========
+        function createRankChart() {
+            // 原始数据 - 只保留游戏榜单
+            const rawData = [
+                {"time":"2026-03-27 00点00分","game":""},
+                {"time":"2026-03-27 01点00分","game":""},
+                {"time":"2026-03-27 02点00分","game":""},
+                {"time":"2026-03-27 03点00分","game":""},
+                {"time":"2026-03-27 04点00分","game":""},
+                {"time":"2026-03-27 05点00分","game":""},
+                {"time":"2026-03-27 06点00分","game":""},
+                {"time":"2026-03-27 07点00分","game":""},
+                {"time":"2026-03-27 08点00分","game":""},
+                {"time":"2026-03-27 09点00分","game":""},
+                {"time":"2026-03-27 10点00分","game":""},
+                {"time":"2026-03-27 11点00分","game":""},
+                {"time":"2026-03-27 12点00分","game":""},
+                {"time":"2026-03-27 13点00分","game":""},
+                {"time":"2026-03-27 14点00分","game":""},
+                {"time":"2026-03-27 15点00分","game":""},
+                {"time":"2026-03-27 16点00分","game":""},
+                {"time":"2026-03-27 17点00分","game":""},
+                {"time":"2026-03-27 18点00分","game":""},
+                {"time":"2026-03-27 19点00分","game":""},
+                {"time":"2026-03-27 20点00分","game":""},
+                {"time":"2026-03-27 21点00分","game":""},
+                {"time":"2026-03-27 22点00分","game":""},
+                {"time":"2026-03-27 23点00分","game":""},
+                {"time":"2026-03-28 00点00分","game":""},
+                {"time":"2026-03-28 01点00分","game":""},
+                {"time":"2026-03-28 02点00分","game":""},
+                {"time":"2026-03-28 03点00分","game":""},
+                {"time":"2026-03-28 04点00分","game":""},
+                {"time":"2026-03-28 05点00分","game":"95"},
+                {"time":"2026-03-28 06点00分","game":"95"},
+                {"time":"2026-03-28 07点00分","game":"95"},
+                {"time":"2026-03-28 08点00分","game":"93"},
+                {"time":"2026-03-28 09点00分","game":"93"},
+                {"time":"2026-03-28 10点00分","game":"93"},
+                {"time":"2026-03-28 11点00分","game":"95"},
+                {"time":"2026-03-28 12点00分","game":"95"},
+                {"time":"2026-03-28 13点00分","game":"83"},
+                {"time":"2026-03-28 14点00分","game":"83"},
+                {"time":"2026-03-28 15点00分","game":"83"},
+                {"time":"2026-03-28 16点00分","game":"65"},
+                {"time":"2026-03-28 17点00分","game":"65"},
+                {"time":"2026-03-28 18点00分","game":"65"},
+                {"time":"2026-03-28 19点00分","game":"65"},
+                {"time":"2026-03-28 20点00分","game":"28"},
+                {"time":"2026-03-28 21点00分","game":"28"},
+                {"time":"2026-03-28 22点00分","game":"28"},
+                {"time":"2026-03-28 23点00分","game":"14"},
+                {"time":"2026-03-29 00点00分","game":"14"},
+                {"time":"2026-03-29 01点00分","game":"14"},
+                {"time":"2026-03-29 02点00分","game":"12"},
+                {"time":"2026-03-29 03点00分","game":"12"},
+                {"time":"2026-03-29 04点00分","game":"12"},
+                {"time":"2026-03-29 05点00分","game":"13"},
+                {"time":"2026-03-29 06点00分","game":"13"},
+                {"time":"2026-03-29 07点00分","game":"13"},
+                {"time":"2026-03-29 08点00分","game":"13"},
+                {"time":"2026-03-29 09点00分","game":"13"},
+                {"time":"2026-03-29 10点00分","game":"13"},
+                {"time":"2026-03-29 11点00分","game":"13"},
+                {"time":"2026-03-29 12点00分","game":"13"},
+                {"time":"2026-03-29 13点00分","game":"12"},
+                {"time":"2026-03-29 14点00分","game":"12"},
+                {"time":"2026-03-29 15点00分","game":"12"},
+                {"time":"2026-03-29 16点00分","game":"12"},
+                {"time":"2026-03-29 17点00分","game":"12"},
+                {"time":"2026-03-29 18点00分","game":"12"},
+                {"time":"2026-03-29 19点00分","game":"12"},
+                {"time":"2026-03-29 20点00分","game":"9"},
+                {"time":"2026-03-29 21点00分","game":"9"},
+                {"time":"2026-03-29 22点00分","game":"9"},
+                {"time":"2026-03-29 23点00分","game":"9"},
+                {"time":"2026-03-30 00点00分","game":"9"},
+                {"time":"2026-03-30 01点00分","game":"8"},
+                {"time":"2026-03-30 02点00分","game":"8"},
+                {"time":"2026-03-30 03点00分","game":"8"},
+                {"time":"2026-03-30 04点00分","game":"8"},
+                {"time":"2026-03-30 05点00分","game":"8"},
+                {"time":"2026-03-30 06点00分","game":"8"},
+                {"time":"2026-03-30 07点00分","game":"8"},
+                {"time":"2026-03-30 08点00分","game":"8"},
+                {"time":"2026-03-30 09点00分","game":"8"},
+                {"time":"2026-03-30 10点00分","game":"8"},
+                {"time":"2026-03-30 11点00分","game":"8"},
+                {"time":"2026-03-30 12点00分","game":"8"},
+                {"time":"2026-03-30 13点00分","game":"3"},
+                {"time":"2026-03-30 14点00分","game":"3"},
+                {"time":"2026-03-30 15点00分","game":"3"},
+                {"time":"2026-03-30 16点00分","game":"3"},
+                {"time":"2026-03-30 17点00分","game":"3"},
+                {"time":"2026-03-30 18点00分","game":"3"},
+                {"time":"2026-03-30 19点00分","game":"3"},
+                {"time":"2026-03-30 20点00分","game":"3"},
+                {"time":"2026-03-30 21点00分","game":"3"},
+                {"time":"2026-03-30 22点00分","game":"3"},
+                {"time":"2026-03-30 23点00分","game":"3"},
+                {"time":"2026-03-31 00点00分","game":"3"},
+                {"time":"2026-03-31 01点00分","game":"3"},
+                {"time":"2026-03-31 02点00分","game":"3"},
+                {"time":"2026-03-31 03点00分","game":"3"},
+                {"time":"2026-03-31 04点00分","game":"3"},
+                {"time":"2026-03-31 05点00分","game":"3"},
+                {"time":"2026-03-31 06点00分","game":"3"},
+                {"time":"2026-03-31 07点00分","game":"3"},
+                {"time":"2026-03-31 08点00分","game":"3"},
+                {"time":"2026-03-31 09点00分","game":"3"},
+                {"time":"2026-03-31 10点00分","game":"3"},
+                {"time":"2026-03-31 11点00分","game":"3"},
+                {"time":"2026-03-31 12点00分","game":"3"},
+                {"time":"2026-03-31 13点00分","game":"3"},
+                {"time":"2026-03-31 14点00分","game":"3"},
+                {"time":"2026-03-31 15点00分","game":"3"},
+                {"time":"2026-03-31 16点00分","game":"3"},
+                {"time":"2026-03-31 17点00分","game":"3"},
+                {"time":"2026-03-31 18点00分","game":"3"},
+                {"time":"2026-03-31 19点00分","game":"3"},
+                {"time":"2026-03-31 20点00分","game":"3"},
+                {"time":"2026-03-31 21点00分","game":"3"},
+                {"time":"2026-03-31 22点00分","game":"3"},
+                {"time":"2026-03-31 23点00分","game":"3"},
+                {"time":"2026-04-01 00点00分","game":"3"},
+                {"time":"2026-04-01 01点00分","game":"3"},
+                {"time":"2026-04-01 02点00分","game":"3"},
+                {"time":"2026-04-01 03点00分","game":"3"},
+                {"time":"2026-04-01 04点00分","game":"3"},
+                {"time":"2026-04-01 05点00分","game":"3"},
+                {"time":"2026-04-01 06点00分","game":"3"},
+                {"time":"2026-04-01 07点00分","game":"3"},
+                {"time":"2026-04-01 08点00分","game":"3"},
+                {"time":"2026-04-01 09点00分","game":"3"},
+                {"time":"2026-04-01 10点00分","game":"3"},
+                {"time":"2026-04-01 11点00分","game":"4"},
+                {"time":"2026-04-01 12点00分","game":"4"},
+                {"time":"2026-04-01 13点00分","game":"4"},
+                {"time":"2026-04-01 14点00分","game":"4"},
+                {"time":"2026-04-01 15点00分","game":"4"},
+                {"time":"2026-04-01 16点00分","game":"4"},
+                {"time":"2026-04-01 17点00分","game":"4"},
+                {"time":"2026-04-01 18点00分","game":"4"},
+                {"time":"2026-04-01 19点00分","game":"4"},
+                {"time":"2026-04-01 20点00分","game":"4"},
+                {"time":"2026-04-01 21点00分","game":"4"},
+                {"time":"2026-04-01 22点00分","game":"4"},
+                {"time":"2026-04-01 23点00分","game":"4"},
+                {"time":"2026-04-02 00点00分","game":"4"},
+                {"time":"2026-04-02 01点00分","game":"4"},
+                {"time":"2026-04-02 02点00分","game":"4"},
+                {"time":"2026-04-02 03点00分","game":"4"},
+                {"time":"2026-04-02 04点00分","game":"4"},
+                {"time":"2026-04-02 05点00分","game":"4"},
+                {"time":"2026-04-02 06点00分","game":"4"},
+                {"time":"2026-04-02 07点00分","game":"4"},
+                {"time":"2026-04-02 08点00分","game":"4"},
+                {"time":"2026-04-02 09点00分","game":"4"},
+                {"time":"2026-04-02 10点00分","game":"4"},
+                {"time":"2026-04-02 10点32分","game":"4"}
+            ];
+
+            // 处理数据 - 只保留有数据的点
+            const times = [];
+            const gameRanks = [];
+
+            rawData.forEach(item => {
+                if (item.game && item.game !== "") {
+                    const timeStr = item.time.replace('点', ':').replace('分', '');
+                    times.push(timeStr);
+                    gameRanks.push(parseInt(item.game));
+                }
+            });
+
+            const container = document.getElementById('rank-chart-container');
+            const width = container.clientWidth;
+            const height = container.clientHeight;
+            const padding = { top: 40, right: 60, bottom: 80, left: 80 };
+            const chartWidth = width - padding.left - padding.right;
+            const chartHeight = height - padding.top - padding.bottom;
+
+            // 计算Y轴范围（排名0在最上面，数值越大越靠下）
+            const maxRank = Math.max(...gameRanks);
+            const yMax = Math.ceil(maxRank / 10) * 10;
+
+            // 创建SVG
+            const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+            svg.setAttribute('viewBox', `0 0 ${width} ${height}`);
+            svg.style.width = '100%';
+            svg.style.height = '100%';
+
+            // 绘制网格线
+            const gridGroup = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+            for (let i = 0; i <= yMax; i += 10) {
+                const y = padding.top + (i / yMax) * chartHeight;
+                
+                // 网格线
+                const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+                line.setAttribute('x1', padding.left);
+                line.setAttribute('y1', y);
+                line.setAttribute('x2', width - padding.right);
+                line.setAttribute('y2', y);
+                line.setAttribute('stroke', '#e0e0e0');
+                line.setAttribute('stroke-width', '1');
+                gridGroup.appendChild(line);
+
+                // Y轴标签
+                const text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+                text.setAttribute('x', padding.left - 10);
+                text.setAttribute('y', y + 4);
+                text.setAttribute('text-anchor', 'end');
+                text.setAttribute('font-size', '12');
+                text.setAttribute('fill', '#666');
+                text.textContent = i + '名';
+                gridGroup.appendChild(text);
+            }
+            svg.appendChild(gridGroup);
+
+            // 绘制X轴标签
+            const xAxisGroup = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+            const labelInterval = Math.ceil(times.length / 8);
+            for (let i = 0; i < times.length; i += labelInterval) {
+                const x = padding.left + (i / (times.length - 1)) * chartWidth;
+                const timeParts = times[i].split(' ');
+                const datePart = timeParts[0];
+                const timePart = timeParts[1] || '';
+                
+                // 只提取月日部分 (03-28)
+                const dateComponents = datePart.split('-');
+                const monthDay = dateComponents[1] + '-' + dateComponents[2];
+                
+                const text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+                text.setAttribute('x', x);
+                text.setAttribute('y', height - padding.bottom + 20);
+                text.setAttribute('text-anchor', 'middle');
+                text.setAttribute('font-size', '11');
+                text.setAttribute('fill', '#666');
+                text.textContent = monthDay + '\n' + timePart;
+                xAxisGroup.appendChild(text);
+            }
+            svg.appendChild(xAxisGroup);
+
+            // 绘制曲线
+            const pathGroup = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+            let pathData = '';
+            
+            gameRanks.forEach((rank, index) => {
+                const x = padding.left + (index / (gameRanks.length - 1)) * chartWidth;
+                const y = padding.top + (rank / yMax) * chartHeight;
+                
+                if (index === 0) {
+                    pathData += `M ${x} ${y}`;
+                } else {
+                    pathData += ` L ${x} ${y}`;
+                }
+            });
+
+            const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+            path.setAttribute('d', pathData);
+            path.setAttribute('fill', 'none');
+            path.setAttribute('stroke', '#91CC75');
+            path.setAttribute('stroke-width', '2.5');
+            path.setAttribute('stroke-linejoin', 'round');
+            path.setAttribute('stroke-linecap', 'round');
+            pathGroup.appendChild(path);
+
+            // 绘制数据点
+            gameRanks.forEach((rank, index) => {
+                const x = padding.left + (index / (gameRanks.length - 1)) * chartWidth;
+                const y = padding.top + (rank / yMax) * chartHeight;
+                
+                const circle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+                circle.setAttribute('cx', x);
+                circle.setAttribute('cy', y);
+                circle.setAttribute('r', '4');
+                circle.setAttribute('fill', '#91CC75');
+                circle.setAttribute('stroke', 'white');
+                circle.setAttribute('stroke-width', '2');
+                circle.style.cursor = 'pointer';
+                
+                // 添加悬停事件
+                circle.addEventListener('mouseenter', (e) => {
+                    const tooltip = document.getElementById('chart-tooltip');
+                    tooltip.innerHTML = `<strong>${times[index]}</strong><br/>排名：第${rank}名`;
+                    tooltip.style.display = 'block';
+                    tooltip.style.left = (e.pageX + 10) + 'px';
+                    tooltip.style.top = (e.pageY - 30) + 'px';
+                });
+                
+                circle.addEventListener('mouseleave', () => {
+                    const tooltip = document.getElementById('chart-tooltip');
+                    tooltip.style.display = 'none';
+                });
+                
+                circle.addEventListener('mousemove', (e) => {
+                    const tooltip = document.getElementById('chart-tooltip');
+                    tooltip.style.left = (e.pageX + 10) + 'px';
+                    tooltip.style.top = (e.pageY - 30) + 'px';
+                });
+                
+                pathGroup.appendChild(circle);
+            });
+
+            svg.appendChild(pathGroup);
+            container.appendChild(svg);
+        }
+
+        // 初始化榜单曲线图
+        window.addEventListener('load', createRankChart);
+
+        // 响应式调整
+        window.addEventListener('resize', () => {
+            const container = document.getElementById('rank-chart-container');
+            container.innerHTML = '<div class="chart-tooltip" id="chart-tooltip"></div>';
+            createRankChart();
+        });
     </script>
 </body>
 </html>
