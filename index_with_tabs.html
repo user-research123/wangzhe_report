@@ -1772,6 +1772,8 @@
                 console.log(`✓ 竞品动态追踪已设置为 ${month}月${day}日`);
             } else {
                 console.log(`⚠ 未找到 ${month}月${day}日 的竞品内容，回退到最新日期`);
+                // 先隐藏所有竞品内容
+                document.querySelectorAll('.competitor-date-content').forEach(c => c.classList.remove('active'));
                 // 回退到第一个可用的内容（通常是最新的）
                 const firstCompetitorContent = document.querySelector('.competitor-date-content');
                 if (firstCompetitorContent) {
@@ -1803,6 +1805,8 @@
                 console.log(`✓ 用户需求追踪已设置为 ${month}月${day}日`);
             } else {
                 console.log(`⚠ 未找到 ${month}月${day}日 的用户需求内容，回退到最新日期`);
+                // 先隐藏所有用户反馈内容
+                document.querySelectorAll('.user-feedback-date-content').forEach(c => c.classList.remove('active'));
                 // 回退到第一个可用的内容（通常是最新的）
                 const firstUserFeedbackContent = document.querySelector('.user-feedback-date-content');
                 if (firstUserFeedbackContent) {
