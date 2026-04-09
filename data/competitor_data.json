@@ -1,5 +1,22 @@
 [
   {
+    "date": "2026年04月09日",
+    "competitors": [
+      {
+        "name": "竞品一：螃蟹",
+        "content": "<h3 class=\"subsubsection-title\">螃蟹账号《王者荣耀世界》商品数据分析报告</h3>\n<p><strong>数据总量:</strong> 100 个商品</p>\n<p><strong>分析时间:</strong> 2026-04-09</p>\n\n<h4 style=\"color: #5a67d8; margin: 15px 0 10px 0;\">价格分布分析</h4>\n<ul>\n<li><strong>价格范围:</strong> ¥60 - ¥205,000</li>\n<li><strong>中位数价格:</strong> ¥600</li>\n<li><strong>高价商品(≥¥10,000):</strong> 9 个 (9.0%)</li>\n</ul>\n\n<h4 style=\"color: #5a67d8; margin: 15px 0 10px 0;\">价格区间分布</h4>\n<ul>\n<li>0-500: 40 个 (40%)</li>\n<li>500-1000: 27 个 (27%)</li>\n<li>1000-5000: 17 个 (17%)</li>\n<li>5000-10000: 7 个 (7%)</li>\n<li>10000以上: 9 个 (9%)</li>\n</ul>\n\n<h4 style=\"color: #5a67d8; margin: 15px 0 10px 0;\">平台分布</h4>\n<ul>\n<li><strong>QQ:</strong> 85 个 (85%)</li>\n<li><strong>微信:</strong> 15 个 (15%)</li>\n</ul>\n\n<h4 style=\"color: #5a67d8; margin: 15px 0 10px 0;\">命名特征</h4>\n<ul>\n<li><strong>单字ID:</strong> 38 个 (38%)</li>\n<li><strong>双字ID:</strong> 29 个 (29%)</li>\n<li><strong>主要风格:</strong> 霸气/中二类 (8%)、诗意/文学类 (4%)、可爱/萌系 (3%)</li>\n</ul>"
+      },
+      {
+        "name": "竞品二：盼之",
+        "content": "<h3 class=\"subsubsection-title\">盼之网站前100个商品分析报告</h3>\n<p>数据分析数量: 100 个商品</p>\n<p>分析时间: 04-09</p>\n<p></p>\n<h4 style=\"color: #5a67d8; margin: 15px 0 10px 0;\">一、商品类型有：成品号, 昵称 hot, 代肝 hot, 充值 new</h4>\n<p></p>\n<h4 style=\"color: #5a67d8; margin: 15px 0 10px 0;\">二、账号的详细信息</h4>\n<p></p>\n<h4 style=\"color: #5a67d8; margin: 15px 0 10px 0;\">1）价格分布分析</h4>\n<p>价格范围: ¥80 - ¥59999</p>\n<p>中位数价格: ¥788</p>\n<li>高价商品(≥¥10,000): 5 个 (5.0%)</li>\n<p></p>\n<h4 style=\"color: #5a67d8; margin: 15px 0 10px 0;\">2）价格区间分布</h4>\n<li>0-500: 27 个 (27.0%)</li>\n<li>500-1000: 43 个 (43.0%)</li>\n<li>1000-5000: 12 个 (12.0%)</li>\n<li>5000-10000: 13 个 (13.0%)</li>\n<li>10000以上: 5 个 (5.0%)</li>\n<p></p>\n<h4 style=\"color: #5a67d8; margin: 15px 0 10px 0;\">3）平台分布</h4>\n<li>安卓QQ: 76 个 (76.0%)</li>\n<li>苹果QQ: 17 个 (17.0%)</li>\n<li>安卓微信: 4 个 (4.0%)</li>\n<li>苹果微信: 3 个 (3.0%)</li>\n<p></p>\n<h4 style=\"color: #5a67d8; margin: 15px 0 10px 0;\">4）命名特征</h4>\n<li>单字ID: 16 个 (16.0%)</li>\n<li>双字ID: 35 个 (35.0%)</li>\n<li>三字ID: 7 个 (7.0%)</li>\n<li>四字及以上ID: 42 个 (42.0%)</li>\n<p></p>\n<p><strong>主要风格: 霸气/中二类 (9.0%)、诗意/文学类 (6.0%)、可爱/萌系 (4.0%)、明星/名人 (8.0%)、其他 (73.0%)</strong></p>"
+      },
+      {
+        "name": "竞品三：闲鱼",
+        "content": "<p>暂无新动态</p>"
+      }
+    ]
+  },
+  {
     "date": "2026年04月01日",
     "competitors": [
       {
