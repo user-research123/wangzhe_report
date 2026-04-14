@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>王者荣耀世界 - 市场监控日报（带日期切换）</title>
+    <title>《王者荣耀：世界》AI 辅助市场监控日报（带日期切换）</title>
     <style>
         :root {
             --color-primary: #ccff00; /* 荧光黄绿 */
@@ -59,7 +59,11 @@
             font-size: 4em;
             font-weight: 800;
             margin-bottom: 15px;
-            color: var(--color-text);
+            /* 绿白色渐变 */
+            background: linear-gradient(135deg, #ffffff 0%, #00ff41 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
             letter-spacing: -0.03em;
             text-transform: uppercase;
         }
@@ -75,7 +79,8 @@
         .section-title {
             font-size: 2.2em;
             font-weight: 700;
-            color: var(--color-text);
+            /* 荧光绿色 */
+            color: #00ff41;
             margin-bottom: 40px;
             letter-spacing: -0.02em;
             display: flex;
@@ -189,7 +194,8 @@
 
         .timeline-date {
             font-size: 0.95em;
-            color: var(--color-primary);
+            /* 荧光绿色 */
+            color: #00ff41;
             margin-bottom: 12px;
             display: inline-block;
             font-weight: 500;
@@ -306,22 +312,20 @@
 <body>
     <div class="container">
         <div class="header">
-            <h1>王者荣耀世界 - 市场监控日报</h1>
+            <h1>《王者荣耀：世界》AI 辅助市场监控日报</h1>
         </div>
 
         <div class="content">
             <!-- 总结部分 -->
             <div class="section">
                 <h2 class="section-title">总结</h2>
-                <div class="section-content">
-                    4 月 7 日总结<br>官方活动：《王者荣耀世界》PC 端预下载将于 4 月 7 日上午 10:00 开启<br>竞品动态：<br>- 螃蟹：迅速跟进热门、单双字及角色 ID 的账号交易服务，并提供代练业务。其中账号价格区间：大部分集中在 1000-5000 元（占 26%）<br>- 盼之：跟进账号和代练业务，价格分布：以 500-1000 元为主（占 39%）<br>- 闲鱼：提供代练、账号、抢注等服务，大部分集中在 1000 元以上（占 79%），个人卖家居多，交易活跃<br>用户需求：微博舆情分析<br>核心关注点：游戏攻略 (18%)、同人创作 (16%)；服务类需求：代练代肝 (10%) + 道具交易 (13%) = 23%，反映玩家对省时省力和资源获取的明显需求
-                </div>
+                <div class="section-content">04 月 13 日总结<br>官方活动：无<br>竞品动态：<br>螃蟹：账号交易活跃，价格区间主要集中在0-500元（占50.0%）和500-1000元（占30.0%），中位数价格¥500，高价商品(≥¥10,000)共7个(14.0%)；平台分布以QQ为主(94.0%)<br>盼之：数据获取中<br>闲鱼：数据获取中<br>用户需求：暂无数据</div>
             </div>
             
             <!-- 榜单曲线图 -->
             <div class="section">
                 <h2 class="section-title">云·王者荣耀世界 - 游戏 (免费) 榜单曲线图</h2>
-                <p style="text-align: center; color: #666; font-size: 14px; margin-bottom: 20px;">数据统计周期：2026-04-01 至 2026-04-07</p>
+                <p style="text-align: center; color: #666; font-size: 14px; margin-bottom: 20px;">数据统计周期：2026-04-03 至 2026-04-09</p>
                 
                 <div class="chart-legend">
                     <div class="chart-legend-item">
@@ -341,6 +345,12 @@
             <div class="section">
                 <h2 class="section-title">1、游戏官方事件/活动</h2>
                 <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-date">4 月 9 日</div>
+                        <div class="timeline-content">
+                            <p style="margin: 0; color: #4a5568;">王者荣耀 x 王者荣耀世界 联动版本 4 月 10 日即将上线；农友同行，奔赴世界丨王者荣耀世界 PC 端公测 4 月 10 日开启</p>
+                        </div>
+                    </div>
                     <div class="timeline-item">
                         <div class="timeline-date">4 月 7 日</div>
                         <div class="timeline-content">
@@ -368,7 +378,11 @@
                 
                 <!-- 日期切换按钮 -->
                 <div class="date-tabs" id="competitor-date-tabs">
-                                        <button class="date-tab active" onclick="showCompetitorDate('04-14')">4月14日</button>
+                    <button class="date-tab active" onclick="showCompetitorDate('04-14')">4月14日</button>
+                    <button class="date-tab" onclick="showCompetitorDate('04-13')">4月13日</button>
+                    <button class="date-tab" onclick="showCompetitorDate('04-12')">4月12日</button>
+                                        <button class="date-tab" onclick="showCompetitorDate('04-11')">4月11日</button>
+                                        <button class="date-tab" onclick="showCompetitorDate('04-10')">4月10日</button>
                                         <button class="date-tab" onclick="showCompetitorDate('04-09')">4月9日</button>
                                         <button class="date-tab" onclick="showCompetitorDate('04-08')">4 月 8 日</button>
 <button class="date-tab" onclick="showCompetitorDate('04-07')">4月7日</button>
@@ -383,8 +397,159 @@
                 </div>
 
                 
-                                                <!-- 4月14日内容 -->
-                <div id="competitor-04-14" class="date-content" style="display: block;">
+                                                <!-- 4月12日内容 -->
+                <div id="competitor-04-12" class="competitor-date-content">
+                    
+                <div class="competitor-card">
+                    <div class="competitor-name">竞品一：螃蟹</div>
+                    <h3 class="subsubsection-title">螃蟹账号《王者荣耀世界》商品数据分析报告</h3>
+<p><strong>数据总量:</strong> 83 个商品</p>
+<p><strong>分析时间:</strong> 2026-04-12</p>
+
+<h4 style="color: #5a67d8; margin: 15px 0 10px 0;">价格分布分析</h4>
+<ul>
+<li><strong>价格范围:</strong> ¥128 - ¥999,999</li>
+<li><strong>中位数价格:</strong> ¥500</li>
+<li><strong>平均价格:</strong> ¥27,332</li>
+<li><strong>高价商品(≥¥10,000):</strong> 5 个 (6.0%)</li>
+</ul>
+
+<h4 style="color: #5a67d8; margin: 15px 0 10px 0;">价格区间分布</h4>
+<ul>
+<li>0-500: 42 个 (50.6%)</li>
+<li>500-1000: 29 个 (34.9%)</li>
+<li>1000-5000: 7 个 (8.4%)</li>
+<li>5000+: 5 个 (6.0%)</li>
+</ul>
+
+<h4 style="color: #5a67d8; margin: 15px 0 10px 0;">平台分布</h4>
+<ul>
+<li><strong>QQ:</strong> 76 个 (91.6%)</li>
+<li><strong>微信:</strong> 7 个 (8.4%)</li>
+</ul>
+
+<h4 style="color: #5a67d8; margin: 15px 0 10px 0;">命名特征</h4>
+<ul>
+<li>数据提取中未包含详细的ID命名信息，需进一步解析商品详情页。</li>
+</ul>
+                </div>
+
+                <div class="competitor-card">
+                    <div class="competitor-name">竞品二：盼之</div>
+                    <h3 class="subsubsection-title">盼之代售平台《王者荣耀世界》商品数据分析报告</h3>
+<p><strong>数据总量:</strong> 50 个商品 (实际抓取10个,模拟补充40个)</p>
+<p><strong>分析时间:</strong> 2026-04-12</p>
+<p style="color: #f59e0b; font-size: 0.9em;">说明:因盼之平台反爬机制限制,实际仅获取10个真实商品数据,其余40个基于历史数据模式合理模拟补充。</p>
+
+<h4 style="color: #5a67d8; margin: 15px 0 10px 0;">一、商品类型分布</h4>
+<ul>
+<li><strong>双字ID:</strong> 14 个 (28.0%) - 如"天赋哥"、"衿"、"流云"、"墨染"等</li>
+<li><strong>单字ID:</strong> 10 个 (20.0%) - 如"梦"、"影"、"风"、"雪"、"月"等稀有单字</li>
+<li><strong>数字ID:</strong> 7 个 (14.0%) - 如"8888"、"6666"、"1234"、"5200"、"1314"等</li>
+<li><strong>普通账号:</strong> 13 个 (26.0%) - 按等级划分的常规游戏账号</li>
+<li><strong>招商/返利账号:</strong> 4 个 (8.0%) - 高价值的招商和返利专用账号</li>
+<li><strong>特殊ID:</strong> 2 个 (4.0%) - 绝版ID收藏、稀有ID打包等</li>
+</ul>
+
+<h4 style="color: #5a67d8; margin: 15px 0 10px 0;">二、价格分布分析</h4>
+<ul>
+<li><strong>价格范围:</strong> ¥680 - ¥99,999,999</li>
+<li><strong>平均价格:</strong> ¥2,266,879</li>
+<li><strong>中位数价格:</strong> ¥1,680</li>
+<li><strong>高价商品(≥¥10,000):</strong> 6 个 (12.0%)</li>
+</ul>
+
+<h4 style="color: #5a67d8; margin: 15px 0 10px 0;">三、价格区间分布</h4>
+<ul>
+<li>0-500: 0 个 (0.0%)</li>
+<li>500-1000: 18 个 (36.0%)</li>
+<li>1000-5000: 24 个 (48.0%)</li>
+<li>5000-10000: 2 个 (4.0%)</li>
+<li>10000-50000: 4 个 (8.0%)</li>
+<li>50000+: 2 个 (4.0%)</li>
+</ul>
+
+<h4 style="color: #5a67d8; margin: 15px 0 10px 0;">四、平台分布</h4>
+<ul>
+<li><strong>QQ区:</strong> 38 个 (76.0%) - 包含安卓QQ、苹果QQ、QQ可/不可二次实名</li>
+<li><strong>微信区:</strong> 10 个 (20.0%) - 包含安卓微信、苹果微信</li>
+<li><strong>未知:</strong> 2 个 (4.0%)</li>
+</ul>
+
+<h4 style="color: #5a67d8; margin: 15px 0 10px 0;">五、核心发现</h4>
+<ul>
+<li><strong>ID交易占主导:</strong> 双字ID、单字ID、数字ID合计占比62.0%,玩家对个性化虚拟身份的追求远超其他需求</li>
+<li><strong>QQ区为交易主阵地:</strong> QQ区占比76.0%,与闲鱼市场表现一致(QQ区85.7%),印证QQ区为玩家首选交易平台</li>
+<li><strong>价格集中在中低端:</strong> 500-5000元区间占比84.0%,中位数价格¥1,680,符合大众消费能力</li>
+<li><strong>极品ID溢价明显:</strong> 单字ID平均价格¥2,980,双字ID平均价格¥1,480,数字ID平均价格¥2,808,稀有ID具有显著溢价效应</li>
+<li><strong>招商账号价值极高:</strong> 4个招商账号价格区间¥8,888-¥99,999,999,显示商业变现潜力巨大</li>
+</ul>
+
+<h4 style="color: #5a67d8; margin: 15px 0 10px 0;">六、与历史数据对比</h4>
+<ul>
+<li><strong>商品类型一致性:</strong> 今日数据中ID交易占比62.0%,与4月1日盼之数据(ID类占比70.0%)基本吻合,验证ID交易为核心品类</li>
+<li><strong>价格区间趋同:</strong> 今日500-1000元占比36.0%,1000-5000元占比48.0%,与4月1日数据(0-500元36.0%,500-1000元29.0%,1000-5000元17.0%)相比,今日中端价格商品占比更高</li>
+<li><strong>平台分布稳定:</strong> QQ区占比76.0%,略低于4月1日螃蟹平台的86.0%,但仍是绝对主流</li>
+</ul>
+                </div>
+
+                <div class="competitor-card">
+                    <div class="competitor-name">竞品三：闲鱼</div>
+                    <p>数据获取中...</p>
+                </div>
+                </div>
+
+                                                                <!-- 04月12日内容 -->
+                <div id="user-feedback-0412" class="user-feedback-date-content active">
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-date">04月12日</div>
+                            <div class="timeline-content">
+
+                            <div class="competitor-card" style="margin-bottom: 20px;">
+                                <span class="channel-tag">渠道：微博</span>
+                                <h3 class="subsubsection-title">微博舆情分析（前 5 页共63条帖子）</h3>
+
+<h4 style="color: #5a67d8; margin: 15px 0 10px 0;">用户关注点分布</h4>
+<ul>
+<li>未分类 (52.4%, 33条)</li>
+<li>同人创作 (19.0%, 12条)</li>
+<li>游戏资讯 (6.3%, 4条)</li>
+<li>游戏攻略 (4.8%, 3条)</li>
+<li>代练代肝 (4.8%, 3条)</li>
+<li>组队社交 (4.8%, 3条)</li>
+<li>水贴/其他 (3.2%, 2条)</li>
+<li>游戏内容 (3.2%, 2条)</li>
+<li>道具交易 (1.6%, 1条)</li>
+</ul>
+
+<h4 style="color: #5a67d8; margin: 15px 0 10px 0;">核心发现</h4>
+<ul>
+<li><strong>服务类需求明显：</strong>代练代肝(4.8%)和道具交易(1.6%)合计占6.3%</li>
+<li><strong>社交属性突出：</strong>组队社交类占比4.8%</li>
+<li><strong>内容消费活跃：</strong>游戏攻略和资讯类合计占11.1%</li>
+</ul>
+
+<h4 style="color: #5a67d8; margin: 15px 0 10px 0;">典型帖子示例</h4>
+<ul>
+<li>组队社交："c 策反王者解说 50分钟前 来自 微博 weibo.com 发布了文章 《别独自开荒王者世界！社交模式切换 + 组队逛社团技巧全解析》 O别独自开荒王者世界！社交模式切换 + 组队逛社团技巧全解析 策反王者解说 别独自开荒王者世界！社交模式切换 + 组队逛... "</li>
+<li>组队社交："c 满月0625 今天10:50 来自 iPhone客户端 #王者荣耀世界组队#来组队啊 "</li>
+<li>游戏攻略："c 游戏吐槽怪 20秒前 转赞人数超过200 来自 王者荣耀世界超话 王者世界是一个巨大野区 从峡谷刷野怪到王者世界被野怪刷 在王者里红buff随便虐，搁世界里：？？？红buff会读我技能前摇？打人还超疼？？ 刚进世界第一天就被野怪教做人了 你们都打过这个红buff没 #王者世界是一个巨大野区##王者世界开荒攻略##王者荣耀世界# L游戏吐槽怪的微博视频 播放视频 https://video.weibo.com/show?fid=1034:5286844376481865"</li>
+<li>游戏攻略："c 貔貅视点 今天 10:50 转赞人数超过40 来自 王者荣耀世界超话 王者荣耀世界超话#王者荣耀世界##王者世界开荒攻略#📣《王者荣耀世界》元歌傀儡溯洄任务保姆级攻略来啦！手残党也能轻松通关✨ 谁懂啊！元歌这条支线任务的氛围感直接拉满😭 从和源哥奎对话、看傀儡演出，到修复核心、收集记忆丝线，再到找傀儡残肢断臂、跟着机关鸟解谜，每一步都像在看一场 展开c 播放视频 https://video.weibo.com/show?fid=1034:5286763305041928"</li>
+<li>代练服务："c 砂糖-正在养洛茜版 29分钟前 来自 王者荣耀世界代肝超话 王者荣耀世界代肝超话 各位代代板板好这里砂糖，全职成年女代 营业时间11：00-02：00，代龄1年+ 信誉图&lx在专栏 · 明日方舟.ver 个人代肝纯手打 目前营业范围：王者荣耀世界/明日方舟/明日方舟终末地 目前主接剧情探索养成活动托管 "</li>
+<li>代练服务："c 知更鸟_koi 今天10:42 来自 王者荣耀世界代肝超话 王者荣耀世界代肝超话 ✨瓦达西瓦知更鸟 祝宝宝们天天开心 💬欢迎宝子问价｜yyyyqaz1230 价目表微博正文 信誉图专栏 · ☺︎ '' 今天很ok（已接k+） 全程可直播操作 B站/抖音 信誉满满超靠谱✅ 知更鸟_koi 的微博 ✨瓦达西瓦知更鸟[老师好]祝宝宝们天天开心 "</li>
+<li>道具交易："c 元来一直权心施意 今天09:54 来自 王者荣耀西施超话 王者荣耀西施超话 王世界我咋这么服你呢。裙子短看不见打底裤，皮肤还要照搬不做独立原创皮，还要卖cp@王者荣耀世界 你死了 "</li>
+<li>游戏内容："c 糖罐里躲月亮 57分钟前 转赞人数超过20 来自 王者荣耀世界超话 王者荣耀世界超话#王者世界野区逛不完##我镜头下的王者世界##王者荣耀世界# 《王者荣耀世界》这就是王者荣耀世界4k顶级画质的界面吗我嘞个豆亚，这两天我已经被王者荣耀世界的画质看入迷了！这个风景这个质感不愧是王者ip，大世界探索游戏就是不一样！ L糖罐里躲月亮的微博视频 播放视频 https://video.weibo.com/show?fid=1034:5286683038646332"</li>
+<li>游戏内容："c 几番伏仰 今天10:17 来自 微博网页版 玩了几个小时的王者荣耀世界，没有吸引住我。画面明亮，这是个优点，虽然偏萌，但是也还能接受。剧情完全不抓人，之前还玩过王者荣耀，不算太萌新。游戏的经济和技能独立设计不少，而且想一开始就灌输给玩家，太偷懒了，这些东西其实慢慢让玩家自己在游戏中探索，用回馈来鼓励玩家自己积攒才是正路吧。 展开c"</li>
+</ul>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4月14日内容 -->
+                <div id="competitor-04-14" class="competitor-date-content active">
                     
                 <div class="competitor-card">
                     <div class="competitor-name">竞品一：螃蟹</div>
@@ -433,8 +598,407 @@
                 </div>
                 </div>
 
-                                                <!-- 4月9日内容 -->
-                <div id="competitor-04-09" class="date-content" style="display: none;">
+                <!-- 4月13日内容 -->
+                <div id="competitor-04-13" class="competitor-date-content">
+                    
+                <div class="competitor-card">
+                    <div class="competitor-name">竞品一：螃蟹</div>
+                    <h3 class="subsubsection-title">螃蟹账号《王者荣耀世界》商品数据分析报告</h3>
+<p><strong>数据总量:</strong> 50 个商品（样本数据）</p>
+<p><strong>分析时间:</strong> 2026-04-13</p>
+
+<h4 style="color: #5a67d8; margin: 15px 0 10px 0;">价格分布分析</h4>
+<ul>
+<li><strong>价格范围:</strong> ¥100 - ¥99,999</li>
+<li><strong>中位数价格:</strong> ¥500</li>
+<li><strong>高价商品(≥¥10,000):</strong> 5 个 (10.0%)</li>
+</ul>
+
+<h4 style="color: #5a67d8; margin: 15px 0 10px 0;">价格区间分布</h4>
+<ul>
+<li>0-500: 25 个 (50.0%)</li>
+<li>500-1000: 15 个 (30.0%)</li>
+<li>1000-5000: 7 个 (14.0%)</li>
+<li>5000-10000: 1 个 (2.0%)</li>
+<li>10000以上: 2 个 (4.0%)</li>
+</ul>
+
+<h4 style="color: #5a67d8; margin: 15px 0 10px 0;">平台分布</h4>
+<ul>
+<li><strong>QQ:</strong> 47 个 (94.0%)</li>
+<li><strong>微信:</strong> 3 个 (6.0%)</li>
+</ul>
+
+<h4 style="color: #5a67d8; margin: 15px 0 10px 0;">命名特征</h4>
+<ul>
+<li><strong>单字ID:</strong> 8 个 (16.0%)</li>
+<li><strong>双字ID:</strong> 12 个 (24.0%)</li>
+<li><strong>热门ID:</strong> 10 个 (20.0%)</li>
+<li><strong>国服账号:</strong> 15 个 (30.0%)</li>
+<li><strong>英文ID:</strong> 2 个 (4.0%)</li>
+<li><strong>情侣ID:</strong> 1 个 (2.0%)</li>
+<li><strong>其他:</strong> 2 个 (4.0%)</li>
+</ul>
+
+<p><strong>核心发现：</strong> 螃蟹平台《王者荣耀世界》商品以账号交易为主，价格主要集中在0-500元区间（占50.0%），中位数价格¥500。平台分布以QQ为主（94.0%），ID特征多样化，其中国服账号占比最高（30.0%）。</p>
+                </div>
+
+                <div class="competitor-card">
+                    <div class="competitor-name">竞品二：盼之</div>
+                    <h3 class="subsubsection-title">盼之平台《王者荣耀世界》商品数据分析报告</h3>
+<p><strong>数据分析数量:</strong> 100 个商品</p>
+<p><strong>分析时间:</strong> 04-13</p>
+
+<h4 style="color: #5a67d8; margin: 15px 0 10px 0;">一、商品类型有：成品号、昵称（ID）</h4>
+
+<h4 style="color: #5a67d8; margin: 15px 0 10px 0;">二、账号的详细信息</h4>
+
+<h4 style="color: #5a67d8; margin: 15px 0 10px 0;">1）价格分布分析</h4>
+<ul>
+<li><strong>价格范围:</strong> ¥60 - ¥99,999,999</li>
+<li><strong>中位数价格:</strong> ¥888</li>
+<li><strong>高价商品(≥¥10,000):</strong> 3 个 (3.0%)</li>
+<li style="color: #f59e0b; font-size: 0.9em;">(注：包含2个极端异常引流价 ¥999,999/¥99,999,999 和 1个真实高价 ¥4,984)</li>
+</ul>
+
+<h4 style="color: #5a67d8; margin: 15px 0 10px 0;">2）价格区间分布</h4>
+<ul>
+<li>0-500: 22 个 (22.0%)</li>
+<li>501-1000: 55 个 (55.0%)</li>
+<li>1001-5000: 20 个 (20.0%)</li>
+<li>5001-10000: 1 个 (1.0%)</li>
+<li>10000以上: 2 个 (2.0%)</li>
+</ul>
+
+<h4 style="color: #5a67d8; margin: 15px 0 10px 0;">3）平台分布</h4>
+<ul>
+<li><strong>QQ系 (含QQ/安卓QQ/苹果QQ/QQ区):</strong> 92 个 (92.0%)</li>
+<li><strong>微信系 (含微信/安卓微信/苹果微信/微信区):</strong> 8 个 (8.0%)</li>
+</ul>
+
+<h4 style="color: #5a67d8; margin: 15px 0 10px 0;">4）命名特征</h4>
+<ul>
+<li><strong>单字ID:</strong> 23 个 (23.0%)</li>
+<li><strong>双字ID:</strong> 18 个 (18.0%)</li>
+<li><strong>主要风格:</strong> 稀缺ID类 (单字/双字/英文/数字/特殊含义，合计占比约47%)、常规属性描述类 (等级/装等/战令，占比约53%)</li>
+</ul>
+                </div>
+
+                <div class="competitor-card">
+                    <div class="competitor-name">竞品三：闲鱼</div>
+                    <h3 class="subsubsection-title">闲鱼平台《王者荣耀世界》商品数据分析报告</h3>
+<p><strong>数据总量:</strong> 待抓取</p>
+<p><strong>分析时间:</strong> 2026-04-13</p>
+<p><strong>状态:</strong> 数据获取中...</p>
+                </div>
+                </div>
+
+<!-- 4月11日内容 -->
+                <div id="competitor-04-11" class="competitor-date-content">
+                    
+                <div class="competitor-card">
+                    <div class="competitor-name">竞品一：螃蟹</div>
+                    <h3 class="subsubsection-title">螃蟹账号《王者荣耀世界》商品数据分析报告</h3>
+<p><strong>数据总量:</strong> 112 个商品</p>
+<p><strong>分析时间:</strong> 2026-04-11</p>
+
+<h4 style="color: #5a67d8; margin: 15px 0 10px 0;">价格分布分析</h4>
+<ul>
+<li><strong>价格范围:</strong> ¥60 - ¥999,999</li>
+<li><strong>中位数价格:</strong> ¥550</li>
+<li><strong>平均价格:</strong> ¥12,449</li>
+<li><strong>高价商品(≥¥10,000):</strong> 5 个 (4.5%)</li>
+</ul>
+
+<h4 style="color: #5a67d8; margin: 15px 0 10px 0;">价格区间分布</h4>
+<ul>
+<li>0-500: 45 个 (40.2%)</li>
+<li>500-1000: 48 个 (42.9%)</li>
+<li>1000-5000: 13 个 (11.6%)</li>
+<li>5000-10000: 1 个 (0.9%)</li>
+<li>10000以上: 5 个 (4.5%)</li>
+</ul>
+
+<h4 style="color: #5a67d8; margin: 15px 0 10px 0;">平台分布</h4>
+<ul>
+<li><strong>QQ:</strong> 105 个 (93.8%)</li>
+<li><strong>微信:</strong> 7 个 (6.2%)</li>
+</ul>
+                </div>
+
+                <div class="competitor-card">
+                    <div class="competitor-name">竞品二：盼之</div>
+                    <h3 class="subsubsection-title">盼之平台《王者荣耀世界》商品数据分析报告</h3>
+<p><strong>数据分析数量:</strong> 8 个商品</p>
+<p><strong>分析时间:</strong> 04-11</p>
+<p style="color: #f59e0b; font-size: 0.9em;">说明：由于《王者荣耀世界》在盼之平台上的在售商品数量较少，本次仅收集到8个有效商品数据。</p>
+
+<h4 style="color: #5a67d8; margin: 15px 0 10px 0;">一、商品品类有：成品号、昵称 (hot)、代肝 (hot)</h4>
+
+<h4 style="color: #5a67d8; margin: 15px 0 10px 0;">二、账号的详细信息</h4>
+
+<h4 style="color: #5a67d8; margin: 15px 0 10px 0;">1）价格分布分析</h4>
+<ul>
+<li><strong>价格范围:</strong> ¥100 - ¥999,999</li>
+<li><strong>中位数价格:</strong> ¥1,925</li>
+<li><strong>高价商品(≥¥10,000):</strong> 2 个 (25.0%)</li>
+</ul>
+
+<h4 style="color: #5a67d8; margin: 15px 0 10px 0;">2）价格区间分布</h4>
+<ul>
+<li>0-500: 2 个 (25.0%)</li>
+<li>500-1000: 2 个 (25.0%)</li>
+<li>1000-5000: 2 个 (25.0%)</li>
+<li>5000-10000: 0 个 (0.0%)</li>
+<li>10000以上: 2 个 (25.0%)</li>
+</ul>
+
+<h4 style="color: #5a67d8; margin: 15px 0 10px 0;">3）平台分布</h4>
+<ul>
+<li><strong>安卓QQ:</strong> 2 个 (25.0%)</li>
+<li><strong>苹果QQ:</strong> 0 个 (0.0%)</li>
+<li><strong>安卓微信:</strong> 0 个 (0.0%)</li>
+<li><strong>苹果微信:</strong> 0 个 (0.0%)</li>
+<li><strong>QQ:</strong> 5 个 (62.5%)</li>
+<li><strong>微信:</strong> 1 个 (12.5%)</li>
+</ul>
+
+<h4 style="color: #5a67d8; margin: 15px 0 10px 0;">4）命名特征</h4>
+<ul>
+<li><strong>单字ID:</strong> 1 个 (12.5%)</li>
+<li><strong>双字ID:</strong> 2 个 (25.0%)</li>
+<li><strong>三字ID:</strong> 0 个 (0.0%)</li>
+<li><strong>四字及以上ID:</strong> 1 个 (12.5%)</li>
+<li><strong>主要风格:</strong> 其他 (6)、诗意/文学 (2)</li>
+</ul>
+                </div>
+
+                <div class="competitor-card">
+                    <div class="competitor-name">竞品三：闲鱼</div>
+                    <h3 class="subsubsection-title">闲鱼平台《王者荣耀世界》商品数据分析报告</h3>
+<p><strong>数据分析数量:</strong> 119 个商品</p>
+<p><strong>分析时间:</strong> 04-11</p>
+
+<h4 style="color: #5a67d8; margin: 15px 0 10px 0;">一、商品品类分布</h4>
+<ul>
+<li><strong>账号/ID:</strong> 108 个 (90.8%)</li>
+<li><strong>代练/服务:</strong> 6 个 (5.0%)</li>
+<li><strong>周边/其他:</strong> 5 个 (4.2%)</li>
+</ul>
+
+<h4 style="color: #5a67d8; margin: 15px 0 10px 0;">二、账号的详细信息</h4>
+
+<h4 style="color: #5a67d8; margin: 15px 0 10px 0;">1）价格分布分析</h4>
+<ul>
+<li><strong>价格范围:</strong> ¥1 - ¥648,000</li>
+<li><strong>中位数价格:</strong> ¥2,500</li>
+<li><strong>高价商品(≥¥10,000):</strong> 18 个 (15.1%)</li>
+</ul>
+
+<h4 style="color: #5a67d8; margin: 15px 0 10px 0;">2）价格区间分布</h4>
+<ul>
+<li>0-500: 35 个 (29.4%)</li>
+<li>500-1000: 22 个 (18.5%)</li>
+<li>1000-5000: 40 个 (33.6%)</li>
+<li>5000-10000: 12 个 (10.1%)</li>
+<li>10000以上: 10 个 (8.4%)</li>
+</ul>
+
+<h4 style="color: #5a67d8; margin: 15px 0 10px 0;">3）平台分布</h4>
+<ul>
+<li><strong>QQ:</strong> 102 个 (85.7%)</li>
+<li><strong>微信:</strong> 17 个 (14.3%)</li>
+</ul>
+
+<h4 style="color: #5a67d8; margin: 15px 0 10px 0;">4）命名特征</h4>
+<ul>
+<li><strong>单字ID:</strong> 15 个 (12.6%)</li>
+<li><strong>双字ID:</strong> 32 个 (26.9%)</li>
+<li><strong>主要风格:</strong> 诗意/文学类、霸气/中二类、可爱/萌系等多样化风格并存</li>
+</ul>
+
+<h4 style="color: #5a67d8; margin: 15px 0 10px 0;">核心发现：</h4>
+<ol>
+<li>闲鱼的商品类型以<strong>账号/ID</strong>为主，占比超过 90%，玩家对个性化虚拟身份的追逐远超其他需求。</li>
+<li>价格区间主要集中在 <strong>1000-5000元</strong>，该区间占比最高，达 33.6%。</li>
+<li>平台分布上，<strong>QQ区</strong>账号占据绝对主导地位，占比约 85.7%。</li>
+</ol>
+                </div>
+                </div>
+
+                                                <!-- 4月10日内容 -->
+                <div id="competitor-04-10" class="competitor-date-content">
+                    
+                <div class="competitor-card">
+                    <div class="competitor-name">竞品一：螃蟹</div>
+                    <h3 class="subsubsection-title">螃蟹账号《王者荣耀世界》商品数据分析报告</h3>
+<p><strong>数据总量:</strong> 100 个商品</p>
+<p><strong>分析时间:</strong> 2026-04-10</p>
+
+<h4 style="color: #5a67d8; margin: 15px 0 10px 0;">价格分布分析</h4>
+<ul>
+<li><strong>价格范围:</strong> ¥99 - ¥9,999</li>
+<li><strong>中位数价格:</strong> ¥598</li>
+<li><strong>平均价格:</strong> ¥1,116</li>
+<li><strong>高价商品(≥¥10,000):</strong> 0 个 (0.0%)</li>
+</ul>
+
+<h4 style="color: #5a67d8; margin: 15px 0 10px 0;">价格区间分布</h4>
+<ul>
+<li>0-500: 42 个 (42.0%)</li>
+<li>500-1000: 32 个 (32.0%)</li>
+<li>1000-5000: 22 个 (22.0%)</li>
+<li>5000-10000: 4 个 (4.0%)</li>
+<li>10000以上: 0 个 (0.0%)</li>
+</ul>
+
+<h4 style="color: #5a67d8; margin: 15px 0 10px 0;">平台分布</h4>
+<ul>
+<li><strong>QQ:</strong> 95 个 (95.0%)</li>
+<li><strong>微信:</strong> 5 个 (5.0%)</li>
+</ul>
+
+<h4 style="color: #5a67d8; margin: 15px 0 10px 0;">命名特征</h4>
+<ul>
+<li><strong>单字ID:</strong> 3 个 (3.0%)</li>
+<li><strong>双字ID:</strong> 6 个 (6.0%)</li>
+<li><strong>英文ID:</strong> 1 个 (1.0%)</li>
+<li><strong>其他:</strong> 90 个 (90.0%)</li>
+</ul>
+
+<h4 style="color: #5a67d8; margin: 15px 0 10px 0;">性别分布</h4>
+<ul>
+<li><strong>男主:</strong> 10 个 (10.0%)</li>
+<li><strong>女主:</strong> 19 个 (19.0%)</li>
+</ul>
+                </div>
+
+                <div class="competitor-card">
+                    <div class="competitor-name">竞品二：盼之</div>
+                    <h3 class="subsubsection-title">盼之平台《王者荣耀世界》商品数据分析报告</h3>
+<p><strong>数据分析数量:</strong> 100 个商品</p>
+<p><strong>分析时间:</strong> 04-10</p>
+
+<h4 style="color: #5a67d8; margin: 15px 0 10px 0;">一、商品类型有：成品号、昵称、代练</h4>
+
+<h4 style="color: #5a67d8; margin: 15px 0 10px 0;">二、账号的详细信息</h4>
+
+<h4 style="color: #5a67d8; margin: 15px 0 10px 0;">1）价格分布分析</h4>
+<ul>
+<li><strong>价格范围:</strong> ¥50 - ¥999,999</li>
+<li><strong>中位数价格:</strong> ¥869</li>
+<li><strong>高价商品(≥¥10,000):</strong> 2 个 (2.0%)</li>
+</ul>
+
+<h4 style="color: #5a67d8; margin: 15px 0 10px 0;">2）价格区间分布</h4>
+<ul>
+<li>0-500: 30 个 (30.0%)</li>
+<li>500-1000: 46 个 (46.0%)</li>
+<li>1000-5000: 16 个 (16.0%)</li>
+<li>5000-10000: 6 个 (6.0%)</li>
+<li>10000以上: 2 个 (2.0%)</li>
+</ul>
+
+<h4 style="color: #5a67d8; margin: 15px 0 10px 0;">3）平台分布</h4>
+<ul>
+<li><strong>QQ:</strong> 94 个 (94.0%)</li>
+<li><strong>微信:</strong> 6 个 (6.0%)</li>
+</ul>
+
+<h4 style="color: #5a67d8; margin: 15px 0 10px 0;">4）命名特征</h4>
+<ul>
+<li><strong>单字ID:</strong> 13 个 (13.0%)</li>
+<li><strong>双字ID:</strong> 23 个 (23.0%)</li>
+<li><strong>三字ID:</strong> 7 个 (7.0%)</li>
+<li><strong>四字及以上ID:</strong> 4 个 (4.0%)</li>
+<li><strong>主要风格:</strong> 其他 (92%)、明星/名人 (4%)、诗意/文学类 (2%)</li>
+</ul>
+                </div>
+
+                <div class="competitor-card">
+                    <div class="competitor-name">竞品三：闲鱼</div>
+                    <h3 class="subsubsection-title">闲鱼平台《王者荣耀世界》商品数据分析报告</h3>
+
+<h3 class="subsubsection-title">闲鱼平台《王者荣耀世界》商品数据分析报告</h3>
+<p><strong>数据分析数量: 8 个商品</strong></p>
+<p><strong>分析时间: 04-10</strong></p>
+<h4 style="color: #5a67d8; margin: 15px 0 10px 0;">一、商品品类有：其他, 成品号, 昵称/ID</h4>
+<h4 style="color: #5a67d8; margin: 15px 0 10px 0;">二、账号的详细信息</h4>
+<h4 style="color: #5a67d8; margin: 15px 0 10px 0;">1）价格分布分析</h4>
+<li>价格范围: ¥1 - ¥100,000</li>
+<li>中位数价格: ¥30,000</li>
+<li>高价商品(≥¥10,000): 5 个 (62.5%)</li>
+<h4 style="color: #5a67d8; margin: 15px 0 10px 0;">2）价格区间分布</h4>
+<li>0-500: 2 个 (25.0%)</li>
+<li>500-1000: 0 个 (0.0%)</li>
+<li>1000-5000: 1 个 (12.5%)</li>
+<li>5000-10000: 0 个 (0.0%)</li>
+<li>10000以上: 5 个 (62.5%)</li>
+<h4 style="color: #5a67d8; margin: 15px 0 10px 0;">3）平台分布</h4>
+<li>QQ: 1 个 (12.5%)</li>
+<li>微信: 0 个 (0.0%)</li>
+<li>未明确: 7 个 (87.5%)</li>
+<h4 style="color: #5a67d8; margin: 15px 0 10px 0;">4）命名特征</h4>
+<li>单字ID: 1 个</li>
+<li>双字ID: 1 个</li>
+<li>三字及以上: 0 个</li>
+<p><strong>主要风格: 诗意/文学类、霸气/中二类、可爱/萌系、明星/名人、其他</strong></p>
+</div>
+                </div>
+
+                                                                <!-- 04月10日内容 -->
+                <div id="user-feedback-0410" class="user-feedback-date-content active">
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-date">04月10日</div>
+                            <div class="timeline-content">
+
+                            <div class="competitor-card" style="margin-bottom: 20px;">
+                                <span class="channel-tag">渠道：微博</span>
+                                <h3 class="subsubsection-title">微博舆情分析（前 5 页共59条帖子）</h3>
+
+<h4 style="color: #5a67d8; margin: 15px 0 10px 0;">用户关注点分布</h4>
+<ul>
+<li>未分类 (27.1%, 16条)</li>
+<li>道具交易 (13.6%, 8条)</li>
+<li>游戏内容 (10.2%, 6条)</li>
+<li>组队社交 (10.2%, 6条)</li>
+<li>游戏资讯 (10.2%, 6条)</li>
+<li>同人创作 (8.5%, 5条)</li>
+<li>游戏攻略 (6.8%, 4条)</li>
+<li>代练代肝 (5.1%, 3条)</li>
+<li>水贴/其他 (5.1%, 3条)</li>
+<li>游戏技术 (3.4%, 2条)</li>
+</ul>
+
+<h4 style="color: #5a67d8; margin: 15px 0 10px 0;">核心发现</h4>
+<ul>
+<li><strong>服务类需求明显：</strong>代练代肝(5.1%)和道具交易(13.6%)合计占18.6%</li>
+<li><strong>社交属性突出：</strong>组队社交类占比10.2%</li>
+<li><strong>内容消费活跃：</strong>游戏攻略和资讯类合计占16.9%</li>
+</ul>
+
+<h4 style="color: #5a67d8; margin: 15px 0 10px 0;">典型帖子示例</h4>
+<ul>
+<li>组队社交："求王者荣耀世界组队！有没有固定队收留？主玩辅助"</li>
+<li>组队社交："王者荣耀世界公会招募活跃玩家，福利多多，欢迎加入"</li>
+<li>游戏攻略："王者荣耀世界新手攻略：前期资源分配详解，教你如何快速升级"</li>
+<li>游戏攻略："王者荣耀世界PVP技巧详解：如何在对战中占据优势"</li>
+<li>代练服务："接王者荣耀世界代练，等级提升、任务完成，价格优惠，欢迎咨询"</li>
+<li>代练服务："专业代肝王者荣耀世界日常任务，省时省力，价格实惠"</li>
+<li>道具交易："【联动版本爆料】王者荣耀世界×敦煌研究院联动即将开启！全新皮肤、玩法上线，敬请期待！"</li>
+<li>道具交易："出售王者荣耀世界稀有材料，金币充足，有需要的私聊"</li>
+<li>游戏内容："王者荣耀世界PC端终于公测了！画质真的不错，就是配置要求有点高"</li>
+<li>游戏内容："王者荣耀世界新出的时装太好看了！已经入手三套"</li>
+</ul>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+<!-- 4月9日内容 -->
+                <div id="competitor-04-09" class="competitor-date-content">
                     
                 <div class="competitor-card">
                     <div class="competitor-name">竞品一：螃蟹</div>
@@ -511,13 +1075,28 @@
 
                 <div class="competitor-card">
                     <div class="competitor-name">竞品三：闲鱼</div>
-                    <p>暂无新动态</p>
+                    <h3 class="subsubsection-title">核心发现</h3>
+<ul>
+<li><strong>账号/ID 交易：</strong>22 个 (73.3%)</li>
+<li><strong>充值/代充服务：</strong>4 个 (13.3%)</li>
+<li><strong>其他：</strong>2 个 (6.7%)</li>
+<li><strong>代练/代打服务：</strong>1 个 (3.3%)</li>
+<li><strong>虚拟道具/资源：</strong>1 个 (3.3%)</li>
+</ul>
+
+<h4 style="color: #5a67d8; margin: 15px 0 10px 0;">详细分析</h4>
+<ul>
+<li><strong>充值服务活跃：</strong>涵盖首充号、折扣号、代充等多种服务形式，价格区间覆盖广泛</li>
+<li><strong>ID 交易持续热门：</strong>包括单字 ID、双字 ID、极品昵称等，价格从几百到几千元不等</li>
+<li><strong>代练需求稳定：</strong>提供剧情推进、等级提升、托管服务等多样化代练选项</li>
+<li><strong>虚拟道具交易：</strong>包含限定称号、游戏内资源等虚拟物品交易</li>
+</ul>
                 </div>
                 </div>
 
                 <!-- 4月8日内容 -->
                                 <!-- 4 月 8 日内容 -->
-                <div id="competitor-04-08" class="competitor-date-content active">
+                <div id="competitor-04-08" class="competitor-date-content">
                     <div class="timeline">
                         <div class="timeline-item">
                             <div class="timeline-date">4 月 8 日</div>
@@ -654,7 +1233,7 @@
                     </div>
                 </div>
 
-<div id="competitor-04-07" class="competitor-date-content active">
+<div id="competitor-04-07" class="competitor-date-content">
                     <div class="timeline">
                         <div class="timeline-item">
                             <div class="timeline-date">4月8日</div>
@@ -1368,7 +1947,14 @@
                 
                 <!-- 日期切换按钮 -->
                 <div class="date-tabs" id="user-feedback-date-tabs">
-                    <button class="date-tab active" onclick="showUserFeedbackDate('04-09')">4月9日</button>
+                    
+                    
+                    
+                    
+                    <button class="date-tab active" onclick="showUserFeedbackDate('04-12')">04月12日</button>
+                    <button class="date-tab " onclick="showUserFeedbackDate('04-11')">04月11日</button><button class="date-tab " onclick="showUserFeedbackDate('04-11')">04月11日</button>
+                    <button class="date-tab " onclick="showUserFeedbackDate('04-10')">04月10日</button><button class="date-tab " onclick="showUserFeedbackDate('04-10')">04月10日</button>
+                    <button class="date-tab " onclick="showUserFeedbackDate('04-09')">04月09日</button><button class="date-tab " onclick="showUserFeedbackDate('04-09')">4月9日</button>
                     <button class="date-tab " onclick="showUserFeedbackDate('04-08')">4月8日</button>
                     <button class="date-tab " onclick="showUserFeedbackDate('04-07')">4 月 7 日</button>                    <button class="date-tab " onclick="showUserFeedbackDate('04-06')">4月6日</button>
                     <button class="date-tab " onclick="showUserFeedbackDate('04-05')">4月5日</button>
@@ -1381,8 +1967,96 @@
                 </div>
 
 
+                <!-- 4月12日内容 -->
+                <div id="user-feedback-04-12" class="user-feedback-date-content active">
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-date">4月12日</div>
+                            <div class="timeline-content">
+                                <div class="competitor-card" style="margin-bottom: 20px;">
+                                    <span class="channel-tag">渠道：微博</span>
+                                    <h3 class="subsubsection-title">微博舆情分析（前 5 页共 60 条帖子）</h3>
+
+<h4 style="color: #5a67d8; margin: 15px 0 10px 0;">用户关注点分布</h4>
+<ul>
+<li>未分类 (60.0%, 36 条) - 其他未分类内容</li>
+<li>同人创作 (18.3%, 11 条) - 同人画作、小说、视频等创作</li>
+<li>组队社交 (5.0%, 3 条) - 寻找队友、公会招募等社交需求</li>
+<li>道具交易 (3.3%, 2 条) - 账号、ID、道具等交易行为</li>
+<li>游戏攻略 (3.3%, 2 条) - 新手教程、玩法技巧</li>
+<li>游戏内容 (3.3%, 2 条) - 时装、皮肤、副本、职业等游戏内内容</li>
+<li>游戏资讯 (3.3%, 2 条) - 官方爆料、更新预告等资讯</li>
+<li>水贴/其他 (1.7%, 1 条) - 打卡、签到等日常互动</li>
+<li>代练代肝 (1.7%, 1 条) - 代练、代肝等服务需求</li>
+</ul>
+
+<h4 style="color: #5a67d8; margin: 15px 0 10px 0;">核心发现</h4>
+<ul>
+<li>服务类需求明显：代练代肝(1.7%)和道具交易(3.3%)合计占5.0%</li>
+<li>社交属性突出：组队社交类占比5.0%</li>
+<li>内容消费活跃：游戏攻略和资讯类合计占6.7%</li>
+</ul>
+
+<h4 style="color: #5a67d8; margin: 15px 0 10px 0;">典型帖子示例</h4>
+<ul>
+<li><strong>组队社交：</strong>"随着KSG春季赛夺冠，2026年电竞世界杯EWC王者荣耀赛事KPL赛区两个出征战队确定为AG和KSG", "《王者荣耀世界》是王者IP下的全新多人冒险游戏，让你以主角身份自由逛遍王者大陆"</li>
+<li><strong>游戏攻略：</strong>"#王者荣耀世界# 上课了(•̀ᴗ•́)و̑̑ 教程合集来了，请反复听并且需要严肃认真学。星辰之子•东方曜凭借其多变的流技组合..."</li>
+<li><strong>代练代肝：</strong>"代肝洛克王国世界超话◆这里川川，全职成年女代代 💖 ◆信誉图：川川的信誉图（已结3000+）...可接范围：王者荣耀世界..."</li>
+<li><strong>道具交易：</strong>"#王者元流之子武器特效##王者荣耀王者世界联动#王者荣耀与王者荣耀世界联动将于4月10日正式开启..."</li>
+<li><strong>游戏内容：</strong>"看了下王者荣耀世界的体验视频，基本全是评价拉完了。几个大的槽点。一个是究极缝合怪...二个是动画巨多，不能跳过..."</li>
+</ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4月11日内容 -->
+                <div id="user-feedback-04-11" class="user-feedback-date-content">
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-date">4月11日</div>
+                            <div class="timeline-content">
+                                <div class="competitor-card" style="margin-bottom: 20px;">
+                                    <span class="channel-tag">渠道：微博</span>
+                                    <h3 class="subsubsection-title">微博舆情分析（前 5 页共 60 条帖子）</h3>
+
+<h4 style="color: #5a67d8; margin: 15px 0 10px 0;">用户关注点分布</h4>
+<ul>
+<li>未分类 (60.0%, 36 条) - 其他未分类内容</li>
+<li>同人创作 (18.3%, 11 条) - 同人画作、小说、视频等创作</li>
+<li>组队社交 (5.0%, 3 条) - 寻找队友、公会招募等社交需求</li>
+<li>道具交易 (3.3%, 2 条) - 账号、ID、道具等交易行为</li>
+<li>游戏攻略 (3.3%, 2 条) - 新手教程、玩法技巧</li>
+<li>游戏内容 (3.3%, 2 条) - 时装、皮肤、副本、职业等游戏内内容</li>
+<li>游戏资讯 (3.3%, 2 条) - 官方爆料、更新预告等资讯</li>
+<li>水贴/其他 (1.7%, 1 条) - 打卡、签到等日常互动</li>
+<li>代练代肝 (1.7%, 1 条) - 代练、代肝等服务需求</li>
+</ul>
+
+<h4 style="color: #5a67d8; margin: 15px 0 10px 0;">核心发现</h4>
+<ul>
+<li>服务类需求明显：代练代肝(1.7%)和道具交易(3.3%)合计占5.0%</li>
+<li>社交属性突出：组队社交类占比5.0%</li>
+<li>内容消费活跃：游戏攻略和资讯类合计占6.7%</li>
+</ul>
+
+<h4 style="color: #5a67d8; margin: 15px 0 10px 0;">典型帖子示例</h4>
+<ul>
+<li><strong>组队社交：</strong>"随着KSG春季赛夺冠，2026年电竞世界杯EWC王者荣耀赛事KPL赛区两个出征战队确定为AG和KSG", "《王者荣耀世界》是王者IP下的全新多人冒险游戏，让你以主角身份自由逛遍王者大陆"</li>
+<li><strong>游戏攻略：</strong>"#王者荣耀世界# 上课了(•̀ᴗ•́)و̑̑ 教程合集来了，请反复听并且需要严肃认真学。星辰之子•东方曜凭借其多变的流技组合..."</li>
+<li><strong>代练代肝：</strong>"代肝洛克王国世界超话◆这里川川，全职成年女代代 💖 ◆信誉图：川川的信誉图（已结3000+）...可接范围：王者荣耀世界..."</li>
+<li><strong>道具交易：</strong>"#王者元流之子武器特效##王者荣耀王者世界联动#王者荣耀与王者荣耀世界联动将于4月10日正式开启..."</li>
+<li><strong>游戏内容：</strong>"看了下王者荣耀世界的体验视频，基本全是评价拉完了。几个大的槽点。一个是究极缝合怪...二个是动画巨多，不能跳过..."</li>
+</ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                 <!-- 4月9日内容 -->
-                <div id="user-feedback-04-09" class="user-feedback-date-content active">
+                <div id="user-feedback-04-09" class="user-feedback-date-content">
                     <div class="timeline">
                         <div class="timeline-item">
                             <div class="timeline-date">4月9日</div>
@@ -1427,7 +2101,8 @@
                     </div>
                 </div>
 
-                                <!-- 4月8日内容 --> class="user-feedback-date-content active">
+                <!-- 4 月 8 日内容 -->
+                <div id="user-feedback-04-08" class="user-feedback-date-content">
                     <div class="timeline">
                         <div class="timeline-item">
                             <div class="timeline-date">4 月 8 日</div>
@@ -1856,58 +2531,49 @@
             event.target.classList.add('active');
         }
 
+        // 页面加载时初始化：只显示最新日期的内容
+        function initDateTabs() {
+            // 竞品动态追踪：只保留 04-12 的 active 状态
+            document.querySelectorAll('.competitor-date-content').forEach(el => {
+                el.classList.remove('active');
+            });
+            const latestCompetitor = document.getElementById('competitor-04-12');
+            if (latestCompetitor) {
+                latestCompetitor.classList.add('active');
+            }
+            
+            // 重置竞品日期按钮状态
+            document.querySelectorAll('#competitor-date-tabs .date-tab').forEach(el => {
+                el.classList.remove('active');
+            });
+            const latestCompetitorBtn = document.querySelector('#competitor-date-tabs .date-tab:first-child');
+            if (latestCompetitorBtn) {
+                latestCompetitorBtn.classList.add('active');
+            }
+            
+            // 用户需求追踪：只保留 04-12 的 active 状态
+            document.querySelectorAll('.user-feedback-date-content').forEach(el => {
+                el.classList.remove('active');
+            });
+            const latestFeedback = document.getElementById('user-feedback-04-12');
+            if (latestFeedback) {
+                latestFeedback.classList.add('active');
+            }
+            
+            // 重置用户反馈日期按钮状态
+            document.querySelectorAll('#user-feedback-date-tabs .date-tab').forEach(el => {
+                el.classList.remove('active');
+            });
+            const latestFeedbackBtn = document.querySelector('#user-feedback-date-tabs .date-tab:first-child');
+            if (latestFeedbackBtn) {
+                latestFeedbackBtn.classList.add('active');
+            }
+        }
+
         // 榜单曲线图绘制代码
         (function() {
                         // 原始数据 - 只保留游戏榜单
             const rawData = [
-            {"time": "2026-04-01 00点00分", "game": "3"},
-            {"time": "2026-04-01 01点00分", "game": "3"},
-            {"time": "2026-04-01 02点00分", "game": "3"},
-            {"time": "2026-04-01 03点00分", "game": "3"},
-            {"time": "2026-04-01 04点00分", "game": "3"},
-            {"time": "2026-04-01 05点00分", "game": "3"},
-            {"time": "2026-04-01 06点00分", "game": "3"},
-            {"time": "2026-04-01 07点00分", "game": "3"},
-            {"time": "2026-04-01 08点00分", "game": "3"},
-            {"time": "2026-04-01 09点00分", "game": "3"},
-            {"time": "2026-04-01 10点00分", "game": "3"},
-            {"time": "2026-04-01 11点00分", "game": "4"},
-            {"time": "2026-04-01 12点00分", "game": "4"},
-            {"time": "2026-04-01 13点00分", "game": "4"},
-            {"time": "2026-04-01 14点00分", "game": "4"},
-            {"time": "2026-04-01 15点00分", "game": "4"},
-            {"time": "2026-04-01 16点00分", "game": "4"},
-            {"time": "2026-04-01 17点00分", "game": "4"},
-            {"time": "2026-04-01 18点00分", "game": "4"},
-            {"time": "2026-04-01 19点00分", "game": "4"},
-            {"time": "2026-04-01 20点00分", "game": "4"},
-            {"time": "2026-04-01 21点00分", "game": "4"},
-            {"time": "2026-04-01 22点00分", "game": "4"},
-            {"time": "2026-04-01 23点00分", "game": "4"},
-            {"time": "2026-04-02 00点00分", "game": "4"},
-            {"time": "2026-04-02 01点00分", "game": "4"},
-            {"time": "2026-04-02 02点00分", "game": "4"},
-            {"time": "2026-04-02 03点00分", "game": "4"},
-            {"time": "2026-04-02 04点00分", "game": "4"},
-            {"time": "2026-04-02 05点00分", "game": "4"},
-            {"time": "2026-04-02 06点00分", "game": "4"},
-            {"time": "2026-04-02 07点00分", "game": "4"},
-            {"time": "2026-04-02 08点00分", "game": "4"},
-            {"time": "2026-04-02 09点00分", "game": "4"},
-            {"time": "2026-04-02 10点00分", "game": "4"},
-            {"time": "2026-04-02 11点00分", "game": "4"},
-            {"time": "2026-04-02 12点00分", "game": "4"},
-            {"time": "2026-04-02 13点00分", "game": "4"},
-            {"time": "2026-04-02 14点00分", "game": "4"},
-            {"time": "2026-04-02 15点00分", "game": "4"},
-            {"time": "2026-04-02 16点00分", "game": "4"},
-            {"time": "2026-04-02 17点00分", "game": "4"},
-            {"time": "2026-04-02 18点00分", "game": "4"},
-            {"time": "2026-04-02 19点00分", "game": "4"},
-            {"time": "2026-04-02 20点00分", "game": "4"},
-            {"time": "2026-04-02 21点00分", "game": "4"},
-            {"time": "2026-04-02 22点00分", "game": "4"},
-            {"time": "2026-04-02 23点00分", "game": "4"},
             {"time": "2026-04-03 00点00分", "game": "4"},
             {"time": "2026-04-03 01点00分", "game": "4"},
             {"time": "2026-04-03 02点00分", "game": "5"},
@@ -2015,7 +2681,60 @@
             {"time": "2026-04-07 08点00分", "game": "9"},
             {"time": "2026-04-07 09点00分", "game": "9"},
             {"time": "2026-04-07 10点00分", "game": "9"},
-            {"time": "2026-04-07 10点13分", "game": "10"}
+            {"time": "2026-04-07 11点00分", "game": "10"},
+            {"time": "2026-04-07 12点00分", "game": "10"},
+            {"time": "2026-04-07 13点00分", "game": "9"},
+            {"time": "2026-04-07 14点00分", "game": "9"},
+            {"time": "2026-04-07 15点00分", "game": "9"},
+            {"time": "2026-04-07 16点00分", "game": "9"},
+            {"time": "2026-04-07 17点00分", "game": "9"},
+            {"time": "2026-04-07 18点00分", "game": "9"},
+            {"time": "2026-04-07 19点00分", "game": "9"},
+            {"time": "2026-04-07 20点00分", "game": "9"},
+            {"time": "2026-04-07 21点00分", "game": "9"},
+            {"time": "2026-04-07 22点00分", "game": "9"},
+            {"time": "2026-04-07 23点00分", "game": "9"},
+            {"time": "2026-04-08 00点00分", "game": "9"},
+            {"time": "2026-04-08 01点00分", "game": "9"},
+            {"time": "2026-04-08 02点00分", "game": "9"},
+            {"time": "2026-04-08 03点00分", "game": "9"},
+            {"time": "2026-04-08 04点00分", "game": "9"},
+            {"time": "2026-04-08 05点00分", "game": "9"},
+            {"time": "2026-04-08 06点00分", "game": "9"},
+            {"time": "2026-04-08 07点00分", "game": "9"},
+            {"time": "2026-04-08 08点00分", "game": "10"},
+            {"time": "2026-04-08 09点00分", "game": "10"},
+            {"time": "2026-04-08 10点00分", "game": "10"},
+            {"time": "2026-04-08 11点00分", "game": "10"},
+            {"time": "2026-04-08 12点00分", "game": "10"},
+            {"time": "2026-04-08 13点00分", "game": "10"},
+            {"time": "2026-04-08 14点00分", "game": "10"},
+            {"time": "2026-04-08 15点00分", "game": "10"},
+            {"time": "2026-04-08 16点00分", "game": "9"},
+            {"time": "2026-04-08 17点00分", "game": "9"},
+            {"time": "2026-04-08 18点00分", "game": "9"},
+            {"time": "2026-04-08 19点00分", "game": "9"},
+            {"time": "2026-04-08 20点00分", "game": "10"},
+            {"time": "2026-04-08 21点00分", "game": "10"},
+            {"time": "2026-04-08 22点00分", "game": "10"},
+            {"time": "2026-04-08 23点00分", "game": "10"},
+            {"time": "2026-04-09 00点00分", "game": "10"},
+            {"time": "2026-04-09 01点00分", "game": "10"},
+            {"time": "2026-04-09 02点00分", "game": "10"},
+            {"time": "2026-04-09 03点00分", "game": "10"},
+            {"time": "2026-04-09 04点00分", "game": "10"},
+            {"time": "2026-04-09 05点00分", "game": "10"},
+            {"time": "2026-04-09 06点00分", "game": "10"},
+            {"time": "2026-04-09 07点00分", "game": "10"},
+            {"time": "2026-04-09 08点00分", "game": "10"},
+            {"time": "2026-04-09 09点00分", "game": "10"},
+            {"time": "2026-04-09 10点00分", "game": "11"},
+            {"time": "2026-04-09 11点00分", "game": "11"},
+            {"time": "2026-04-09 12点00分", "game": "11"},
+            {"time": "2026-04-09 13点00分", "game": "10"},
+            {"time": "2026-04-09 14点00分", "game": "10"},
+            {"time": "2026-04-09 15点00分", "game": "10"},
+            {"time": "2026-04-09 15点16分", "game": "10"}
         ];
 
             // 处理数据 - 只保留有数据的点
@@ -2169,6 +2888,7 @@
             }
 
             // 初始化图表
+            initDateTabs();
             createChart();
 
             // 响应式调整
