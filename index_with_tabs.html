@@ -2516,11 +2516,11 @@
                 latestCompetitorBtn.classList.add('active');
             }
             
-            // 用户需求追踪：只保留 04-12 的 active 状态
+            // 用户需求追踪：只显示最新日期(04-14)的内容
             document.querySelectorAll('.user-feedback-date-content').forEach(el => {
                 el.classList.remove('active');
             });
-            const latestFeedback = document.getElementById('user-feedback-04-12');
+            const latestFeedback = document.getElementById('user-feedback-04-14');
             if (latestFeedback) {
                 latestFeedback.classList.add('active');
             }
