@@ -371,23 +371,23 @@
 <h2 class="section-title">2、竞品动态追踪</h2>
 <!-- 日期切换按钮 -->
 <div class="date-tabs" id="competitor-date-tabs">
-<button class="date-tab active" onclick="showCompetitorDate('04-15')">4月15日</button>
-<button class="date-tab" onclick="showCompetitorDate('04-14')">4月14日</button>
-<button class="date-tab" onclick="showCompetitorDate('04-13')">4月13日</button>
-<button class="date-tab" onclick="showCompetitorDate('04-12')">4月12日</button>
-<button class="date-tab" onclick="showCompetitorDate('04-11')">4月11日</button>
-<button class="date-tab" onclick="showCompetitorDate('04-10')">4月10日</button>
-<button class="date-tab" onclick="showCompetitorDate('04-09')">4月9日</button>
-<button class="date-tab" onclick="showCompetitorDate('04-08')">4月8日</button>
-<button class="date-tab" onclick="showCompetitorDate('04-07')">4月7日</button>
-<button class="date-tab" onclick="showCompetitorDate('04-06')">4月6日</button>
-<button class="date-tab" onclick="showCompetitorDate('04-05')">4月5日</button>
-<button class="date-tab" onclick="showCompetitorDate('04-04')">4月4日</button>
-<button class="date-tab" onclick="showCompetitorDate('04-03')">4月3日</button>
-<button class="date-tab" onclick="showCompetitorDate('04-02')">4月2日</button>
-<button class="date-tab" onclick="showCompetitorDate('04-01')">4月1日</button>
-<button class="date-tab" onclick="showCompetitorDate('03-31')">3月31日</button>
-<button class="date-tab" onclick="showCompetitorDate('03-30')">3月30日</button>
+<button class="date-tab active" onclick="showCompetitorDate(\'04-15\', this)">4月15日</button>
+<button class="date-tab" onclick="showCompetitorDate(\'04-14\', this)">4月14日</button>
+<button class="date-tab" onclick="showCompetitorDate(\'04-13\', this)">4月13日</button>
+<button class="date-tab" onclick="showCompetitorDate(\'04-12\', this)">4月12日</button>
+<button class="date-tab" onclick="showCompetitorDate(\'04-11\', this)">4月11日</button>
+<button class="date-tab" onclick="showCompetitorDate(\'04-10\', this)">4月10日</button>
+<button class="date-tab" onclick="showCompetitorDate(\'04-09\', this)">4月9日</button>
+<button class="date-tab" onclick="showCompetitorDate(\'04-08\', this)">4月8日</button>
+<button class="date-tab" onclick="showCompetitorDate(\'04-07\', this)">4月7日</button>
+<button class="date-tab" onclick="showCompetitorDate(\'04-06\', this)">4月6日</button>
+<button class="date-tab" onclick="showCompetitorDate(\'04-05\', this)">4月5日</button>
+<button class="date-tab" onclick="showCompetitorDate(\'04-04\', this)">4月4日</button>
+<button class="date-tab" onclick="showCompetitorDate(\'04-03\', this)">4月3日</button>
+<button class="date-tab" onclick="showCompetitorDate(\'04-02\', this)">4月2日</button>
+<button class="date-tab" onclick="showCompetitorDate(\'04-01\', this)">4月1日</button>
+<button class="date-tab" onclick="showCompetitorDate(\'03-31\', this)">3月31日</button>
+<button class="date-tab" onclick="showCompetitorDate(\'03-30\', this)">3月30日</button>
 </div>
 <!-- 4月12日内容 -->
 <div class="competitor-date-content" id="competitor-04-12">
@@ -2488,7 +2488,7 @@
 </div>
 <script>
         // 竞品动态追踪日期切换
-        function showCompetitorDate(dateId) {
+        function showCompetitorDate(dateId, btn) {
             // 隐藏所有竞品内容
             const contents = document.querySelectorAll('.competitor-date-content');
             contents.forEach(content => {
@@ -2508,7 +2508,9 @@
             }
 
             // 激活对应的按钮
-            event.target.classList.add('active');
+            if (btn) {
+                btn.classList.add('active');
+            }
         }
 
         // 用户需求追踪日期切换
