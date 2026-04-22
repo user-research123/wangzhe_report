@@ -1238,9 +1238,9 @@
                 const firstTab = compTabs[0];
                 firstTab.classList.add('active');
                 
-                // Extract date ID from onclick
+                // Extract date ID from onclick - handle escaped quotes
                 const onclickStr = firstTab.getAttribute('onclick');
-                const match = onclickStr.match(/'([^']+)'/);
+                const match = onclickStr.match(/\\?'([^']+)'/);
                 if (match) {
                     const dateId = match[1];
                     const content = document.getElementById('competitor-' + dateId);
@@ -1259,8 +1259,9 @@
                 const firstTab = fbTabs[0];
                 firstTab.classList.add('active');
                 
+                // Extract date ID from onclick - handle escaped quotes
                 const onclickStr = firstTab.getAttribute('onclick');
-                const match = onclickStr.match(/'([^']+)'/);
+                const match = onclickStr.match(/\\?'([^']+)'/);
                 if (match) {
                     const dateId = match[1];
                     const content = document.getElementById('user-feedback-' + dateId);
